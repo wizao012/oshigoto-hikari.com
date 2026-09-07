@@ -44,7 +44,7 @@
       if (!webhook) {
         const message = form.dataset.formType === 'area'
           ? 'エリア確認の受付先は現在準備中です。入力内容は送信されていません。'
-          : '無料相談の受付先は現在準備中です。入力内容は送信されていません。';
+          : 'お問い合わせの受付先は現在準備中です。入力内容は送信されていません。';
         setStatus(form, message);
         return;
       }
@@ -56,19 +56,22 @@
 
       const payload = Object.fromEntries(new FormData(form).entries());
       payload.formType = form.dataset.formType;
+      payload.campaign = '最大7万円キャッシュバック';
       payload.submittedAt = new Date().toISOString();
 
       try {
+        const requestBody = new URLSearchParams();
+        Object.entries(payload).forEach(([key, value]) => requestBody.append(key, value));
+
         const response = await fetch(webhook, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          body: requestBody
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         form.reset();
         const successMessage = form.dataset.formType === 'area'
-          ? 'エリア確認を受け付けました。提供可否を確認後、担当者よりご案内します。'
-          : '無料相談を受け付けました。担当者よりご連絡します。';
+          ? 'フレッツ光クロスの提供エリア確認を受け付けました。提供可否を確認後、担当者よりご案内します。'
+          : 'お問い合わせを受け付けました。担当者よりご連絡します。';
         setStatus(form, successMessage);
       } catch (error) {
         console.error(error);
