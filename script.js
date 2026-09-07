@@ -63,15 +63,19 @@
         const requestBody = new URLSearchParams();
         Object.entries(payload).forEach(([key, value]) => requestBody.append(key, value));
 
-        const response = await fetch(webhook, {
+        // Zapier Catch Hookのレスポンスは、file:// やGitHub Pagesからの
+        // クロスオリジン送信時にブラウザ側で読み取りを拒否される場合がある。
+        // no-corsで一度だけ送信し、読めないレスポンスを成功判定に使わない。
+        await fetch(webhook, {
           method: 'POST',
+          mode: 'no-cors',
+          credentials: 'omit',
           body: requestBody
         });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         form.reset();
         const successMessage = form.dataset.formType === 'area'
-          ? 'フレッツ光クロスの提供エリア確認を受け付けました。提供可否を確認後、担当者よりご案内します。'
-          : 'お問い合わせを受け付けました。担当者よりご連絡します。';
+          ? 'フレッツ光クロスの提供エリア確認依頼を送信しました。提供可否を確認後、担当者よりご案内します。'
+          : 'お問い合わせを送信しました。担当者よりご連絡します。';
         setStatus(form, successMessage);
       } catch (error) {
         console.error(error);
