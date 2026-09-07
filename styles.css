@@ -85,7 +85,7 @@ em { color: var(--blue); font-style: normal; }
   text-align: center;
 }
 .image-hotspot-visual b { font-size: clamp(16px, 4.8vw, 21px); font-weight: 700; }
-.image-hotspot-visual strong { font-size: clamp(10.5px, 3.1vw, 13.5px); line-height: 1.18; }
+.image-hotspot-visual strong { font-size: clamp(10.5px, 3.1vw, 13.5px); line-height: 1.18; white-space: nowrap; }
 .image-hotspot-visual i { font-size: clamp(22px, 6vw, 28px); font-style: normal; font-weight: 400; }
 .integrated-footer {
   position: absolute;
@@ -299,6 +299,9 @@ em { color: var(--blue); font-style: normal; }
 .orange-badge { color: var(--orange); background: #fff5df; border: 1px solid #f2aa40; }
 .form-section h2 { margin: 0 0 9px; font-size: 26px; line-height: 1.42; letter-spacing: -.04em; }
 .form-lead { margin: 0 0 25px; color: #667d90; font-size: 12px; }
+.form-topic-list { width: min(100%, 330px); display: grid; gap: 8px; margin: 20px auto 15px; padding: 0; list-style: none; text-align: left; }
+.form-topic-list li { position: relative; min-height: 38px; display: flex; align-items: center; padding: 8px 12px 8px 38px; background: rgba(255,255,255,.88); border: 1px solid #c7e3f4; border-radius: 10px; box-shadow: 0 3px 9px rgba(25,87,133,.07); font-size: 12px; font-weight: 800; line-height: 1.5; }
+.form-topic-list li::before { content: "✓"; position: absolute; left: 13px; width: 18px; height: 18px; display: grid; place-items: center; color: white; background: linear-gradient(145deg, #1991f2, #0068d9); border-radius: 50%; font-size: 11px; }
 .lead-form { margin-top: 24px; padding: 25px 20px 20px; background: white; border-radius: 20px; box-shadow: 0 8px 28px rgba(25,87,133,.16); text-align: left; }
 .progress { display: flex; align-items: center; margin-bottom: 6px; }
 .progress b, .progress i { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; font-style: normal; }
@@ -346,6 +349,8 @@ em { color: var(--blue); font-style: normal; }
 .form-support small { color: #91a4b2; font-size: 8px; }
 .form-section-apply { padding-top: 30px; }
 .form-section-apply .lead-form { padding-top: 28px; }
+.form-section-apply .orange-badge { width: 218px; }
+.form-section-apply .form-lead { margin-top: 0; }
 .form-section-apply .form-header > span { max-width: 170px; padding-inline: 10px; font-size: 9px; }
 .form-section-apply .form-submit { gap: 8px; padding-inline: 8px; font-size: 13px; }
 .chance-banner { border: 0; }
