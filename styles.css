@@ -62,8 +62,8 @@ em { color: var(--blue); font-style: normal; }
 .hero-main-inquiry { left: 4.6%; top: 89.15%; width: 90.8%; height: 5.9%; }
 .campaign-area { left: 8%; top: 82.35%; width: 84%; height: 5.9%; }
 .campaign-inquiry { left: 8%; top: 89.15%; width: 84%; height: 5.9%; }
-.price-area { left: 8%; top: 85.55%; width: 84%; height: 5.25%; }
-.price-inquiry { left: 8%; top: 91.35%; width: 84%; height: 5.35%; }
+.price-area { left: 8%; top: 78.85%; width: 84%; height: 5.55%; }
+.price-inquiry { left: 8%; top: 86.05%; width: 84%; height: 5.55%; }
 .integrated-flow .flow-area { left: 4.2%; top: 81.15%; width: 91.6%; height: 6.35%; }
 .flow-inquiry { left: 4.2%; top: 89.15%; width: 91.6%; height: 6.35%; }
 .integrated-closing .closing-area { left: 3.6%; top: 75.05%; width: 92.8%; height: 6.45%; }

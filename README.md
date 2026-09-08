@@ -21,7 +21,7 @@ HTML・CSS・JavaScriptだけで動作する静的LPです。外部ライブラ�
 
 - Webhook: 2つのフォームともZapierの指定Webhookへ設定済み
 - WebhookのCORS: 公開後、GitHub Pagesの公開URLからJSON POSTできることを実送信テスト
-- GTM: `index.html` 内の2つの `GTM挿入位置` コメントへコードを追加
+- GTM: コンテナ `GTM-5VTFWXV6` を設定済み
 - 個人情報保護方針: 同意文言を正式なプライバシーポリシーURLへリンク
 - 運営会社情報: 現在は `https://hikkoshi-1sp.jp/` へリンク
 - SEO: 公開URL決定後、canonical、`og:url`、`og:image` を追加
@@ -72,5 +72,5 @@ HTML・CSS・JavaScriptだけで動作する静的LPです。外部ライブラ�
 - `styles.css`: モバイル表示用スタイル
 - `script.js`: 入力確認とWebhook送信
 - `assets/`: LP画像、ロゴ、ピカりん画像
-- `IMAGEGEN_PROMPTS.md`: 生成画像のプロンプト記録
+- `assets/`: 公開ページで使用する軽量化済み画像素材
 - `.nojekyll`: GitHub Pages用設定
