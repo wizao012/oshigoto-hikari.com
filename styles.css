@@ -101,6 +101,7 @@ em { color: var(--blue); font-style: normal; }
   line-height: 1.2;
 }
 .integrated-footer img { width: 50%; height: auto; max-height: 44px; object-fit: contain; }
+.footer-legal-links { display: flex; justify-content: center; align-items: center; gap: 16px; }
 .integrated-footer a { color: #597286; font-size: 10px; text-decoration: underline; text-underline-offset: 3px; }
 
 .hero-modern,
@@ -425,3 +426,5 @@ em { color: var(--blue); font-style: normal; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+.privacy-check a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }

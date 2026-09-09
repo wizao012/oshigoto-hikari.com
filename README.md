@@ -22,8 +22,8 @@ HTML・CSS・JavaScriptだけで動作する静的LPです。外部ライブラ�
 - Webhook: 2つのフォームともZapierの指定Webhookへ設定済み
 - WebhookのCORS: 公開後、GitHub Pagesの公開URLからJSON POSTできることを実送信テスト
 - GTM: コンテナ `GTM-5VTFWXV6` を設定済み
-- 個人情報保護方針: 同意文言を正式なプライバシーポリシーURLへリンク
-- 運営会社情報: 現在は `https://hikkoshi-1sp.jp/` へリンク
+- 個人情報保護方針: 両フォームの同意文言とフッターを `https://012grp.co.jp/policy` へリンク済み（ワイズクラウド公式サイトの案内先）
+- 会社概要: フッターをワイズクラウドの `https://012cloud.jp/company` へリンク済み
 - SEO: 公開URL決定後、canonical、`og:url`、`og:image` を追加
 
 ## フォームの現在の挙動
