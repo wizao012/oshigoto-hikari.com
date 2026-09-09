@@ -20,7 +20,7 @@
   <meta name="theme-color" content="#eef8ff">
   <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20260907-5">
+  <link rel="stylesheet" href="styles.css?v=20260909-1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -178,14 +178,14 @@
       <p class="form-badge">10G提供エリア確認</p>
       <h2>導入先が10G光回線の<br>提供エリアか確認できます。</h2>
       <p class="form-lead">住所から簡易判定後、連絡先を入力して確認を依頼できます。</p>
-      <form class="lead-form area-flow-form" data-form-type="area" data-webhook="https://hooks.zapier.com/hooks/catch/12525485/4hcni68/" novalidate>
+      <form class="lead-form area-flow-form" data-form-type="area" novalidate>
         <div class="area-step" data-area-step="address">
         <div class="progress"><b>1</b><span></span><i>2</i></div>
         <div class="progress-label"><strong>住所を入力</strong><span>連絡先を入力</span></div>
         <label>郵便番号 <em>必須</em><span class="postal-wrap"><input name="postalCode" inputmode="numeric" autocomplete="postal-code" placeholder="例）123-4567" required pattern="[0-9]{3}-?[0-9]{4}"><button type="button" class="postal-lookup">住所を自動入力</button></span></label>
         <label>都道府県 <em>必須</em><select name="prefecture" required><option value="">選択してください</option><option>北海道</option><option>青森県</option><option>岩手県</option><option>宮城県</option><option>秋田県</option><option>山形県</option><option>福島県</option><option>茨城県</option><option>栃木県</option><option>群馬県</option><option>埼玉県</option><option>千葉県</option><option>東京都</option><option>神奈川県</option><option>新潟県</option><option>富山県</option><option>石川県</option><option>福井県</option><option>山梨県</option><option>長野県</option><option>岐阜県</option><option>静岡県</option><option>愛知県</option><option>三重県</option><option>滋賀県</option><option>京都府</option><option>大阪府</option><option>兵庫県</option><option>奈良県</option><option>和歌山県</option><option>鳥取県</option><option>島根県</option><option>岡山県</option><option>広島県</option><option>山口県</option><option>徳島県</option><option>香川県</option><option>愛媛県</option><option>高知県</option><option>福岡県</option><option>佐賀県</option><option>長崎県</option><option>熊本県</option><option>大分県</option><option>宮崎県</option><option>鹿児島県</option><option>沖縄県</option></select></label>
-        <label>市区町村 <em>必須</em><input name="city" autocomplete="address-level2" placeholder="例）新宿区西新宿" required></label>
-        <label>町名・番地 <em>必須</em><input name="street" autocomplete="street-address" placeholder="例）1-2-3" required></label>
+        <label>市区町村 <em>必須</em><input name="city" autocomplete="address-level2" placeholder="例）新宿区" required></label>
+        <label>町名・番地 <em>必須</em><input name="street" autocomplete="street-address" placeholder="例）西新宿1-2-3" required></label>
         <button class="form-submit form-submit-blue area-check-action" type="button">簡易エリア判定をする <span>▶</span></button>
         <p class="area-form-note">市区町村単位の簡易判定です。建物・設備状況による正式な提供可否は、担当者が確認してご案内します。</p>
         </div>
@@ -206,7 +206,7 @@
         <label>電話番号 <em>必須</em><input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="例）090-1234-5678" required></label>
         <label>メールアドレス <em>必須</em><input type="email" name="email" autocomplete="email" placeholder="例）info@example.jp" required></label>
         <label class="privacy-check"><input type="checkbox" name="privacyConsent" required><span>個人情報保護方針に同意する</span></label>
-        <button class="form-submit form-submit-blue" type="submit">判定結果の詳細確認を依頼する <span>▶</span></button>
+        <button class="form-submit form-submit-blue" type="submit" data-webhook="https://hooks.zapier.com/hooks/catch/12525485/4hcni68/">判定結果の詳細確認を依頼する <span>▶</span></button>
         </div>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>
@@ -274,6 +274,6 @@
       <span class="phone-copy"><small>電話ですぐ聞く</small><strong>050-1780-2661</strong></span>
     </a>
   </main>
-  <script src="script.js?v=20260907-4"></script>
+  <script src="script.js?v=20260909-2"></script>
 </body>
 </html>

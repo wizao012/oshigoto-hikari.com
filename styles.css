@@ -319,6 +319,7 @@ em { color: var(--blue); font-style: normal; }
 .postal-wrap { position: relative; display: block; }
 .postal-wrap input { padding-right: 125px !important; }
 .postal-lookup { position: absolute; right: 7px; bottom: 7px; height: 37px; padding: 0 11px; color: var(--blue); background: white; border: 1px solid var(--blue); border-radius: 999px; font-size: 10px; }
+.postal-lookup:disabled { cursor: wait; opacity: .6; }
 .area-form-note { margin: 17px 3px 0; color: #71899b; font-size: 9px; font-weight: 600; line-height: 1.7; text-align: center; }
 .progress span.is-active { background: linear-gradient(90deg, #86c9f7, var(--blue)); }
 .area-result-card { margin: 3px 0 13px; padding: 20px 15px; background: #edf7ff; border: 2px solid #8bc9f2; border-radius: 17px; text-align: center; }

@@ -1,5 +1,9 @@
 (() => {
   const forms = document.querySelectorAll('.lead-form');
+  const pushDataLayerEvent = (eventName, eventData = {}) => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: eventName, ...eventData });
+  };
 
   const setStatus = (form, message, isError = false) => {
     const status = form.querySelector('.form-status');
@@ -94,7 +98,7 @@
   });
 
   document.querySelectorAll('.postal-lookup').forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async () => {
       const form = button.closest('form');
       const postalCode = normalizePostalCode(form.elements.postalCode.value);
       if (postalCode.length !== 7) {
@@ -102,12 +106,67 @@
         form.elements.postalCode.focus();
         return;
       }
-      setStatus(form, '住所の自動入力機能は現在準備中です。続けて都道府県・市区町村・町名番地を入力してください。');
+
+      const originalText = button.textContent;
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => controller.abort(), 8000);
+      button.disabled = true;
+      button.textContent = '検索中…';
+      form.elements.postalCode.value = `${postalCode.slice(0, 3)}-${postalCode.slice(3)}`;
+      setStatus(form, '郵便番号から住所を検索しています。');
+
+      try {
+        const response = await fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${postalCode}`, {
+          headers: { Accept: 'application/json' },
+          signal: controller.signal
+        });
+        if (!response.ok) throw new Error(`Postal API returned ${response.status}`);
+
+        const data = await response.json();
+        if (data.status !== 200 || !Array.isArray(data.results) || data.results.length === 0) {
+          setStatus(form, '該当する住所が見つかりませんでした。郵便番号をご確認ください。', true);
+          form.elements.postalCode.focus();
+          return;
+        }
+
+        const result = data.results[0];
+        form.elements.prefecture.value = result.address1 || '';
+        form.elements.city.value = result.address2 || '';
+        form.elements.street.value = result.address3 || '';
+        [form.elements.prefecture, form.elements.city, form.elements.street].forEach((field) => {
+          field.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+
+        const needsConfirmation = data.results.length > 1;
+        const needsStreet = !result.address3;
+        const message = needsConfirmation
+          ? '複数の町域がある郵便番号です。住所候補を入力しましたので、町名・番地をご確認ください。'
+          : needsStreet
+            ? '都道府県・市区町村を入力しました。続けて町名・番地を入力してください。'
+            : '住所を自動入力しました。続けて番地・建物名をご入力ください。';
+        setStatus(form, message);
+        form.elements.street.focus({ preventScroll: true });
+        const streetLength = form.elements.street.value.length;
+        form.elements.street.setSelectionRange(streetLength, streetLength);
+      } catch (error) {
+        console.error('Postal code lookup failed:', error);
+        const message = error.name === 'AbortError'
+          ? '住所検索がタイムアウトしました。時間をおいて、もう一度お試しください。'
+          : '住所を取得できませんでした。通信状況をご確認のうえ、もう一度お試しください。';
+        setStatus(form, message, true);
+      } finally {
+        window.clearTimeout(timeoutId);
+        button.disabled = false;
+        button.textContent = originalText;
+      }
     });
   });
 
   document.querySelectorAll('.area-check-action').forEach((button) => {
-    button.addEventListener('click', () => showAreaContactStep(button.closest('form')));
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      showAreaContactStep(button.closest('form'));
+    });
   });
 
   document.querySelectorAll('.area-back').forEach((button) => {
@@ -122,9 +181,19 @@
     });
   });
 
+  document.addEventListener('click', (event) => {
+    const phoneLink = event.target.closest('a[href^="tel:"]');
+    if (!phoneLink) return;
+    pushDataLayerEvent('click_to_call', {
+      phone_number: '050-1780-2661',
+      cta_location: phoneLink.dataset.ctaLocation || 'unknown'
+    });
+  });
+
   forms.forEach((form) => {
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
+      if (form.dataset.submitting === 'true') return;
       setStatus(form, '');
 
       if (form.dataset.formType === 'area' && form.dataset.areaChecked !== 'true') {
@@ -138,7 +207,8 @@
         return;
       }
 
-      const webhook = form.dataset.webhook?.trim();
+      const submitButton = event.submitter || form.querySelector('[type="submit"]');
+      const webhook = submitButton?.dataset.webhook?.trim() || form.dataset.webhook?.trim();
       if (!webhook) {
         const message = form.dataset.formType === 'area'
           ? 'エリア確認の受付先は現在準備中です。入力内容は送信されていません。'
@@ -147,15 +217,19 @@
         return;
       }
 
-      const submitButton = form.querySelector('[type="submit"]');
       const originalText = submitButton.innerHTML;
+      form.dataset.submitting = 'true';
       submitButton.disabled = true;
       submitButton.textContent = '送信中…';
 
       const payload = Object.fromEntries(new FormData(form).entries());
       payload.formType = form.dataset.formType;
       payload.campaign = '最大7万円キャッシュバック';
-      if (form.dataset.formType === 'area') payload.areaCheckMethod = '市区町村単位の簡易判定（2026年9月時点）';
+      if (form.dataset.formType === 'area') {
+        payload.submissionStage = 'contact_complete';
+        payload.areaCheckMethod = '市区町村単位の簡易判定（2026年9月時点）';
+        payload.fullAddress = `${payload.postalCode} ${payload.prefecture}${payload.city}${payload.street}`.trim();
+      }
       payload.submittedAt = new Date().toISOString();
 
       try {
@@ -171,6 +245,9 @@
           credentials: 'omit',
           body: requestBody
         });
+        pushDataLayerEvent('lead_form_submit', {
+          form_type: form.dataset.formType
+        });
         form.reset();
         const successMessage = form.dataset.formType === 'area'
           ? '10G光回線の提供エリア確認依頼を送信しました。提供可否を確認後、担当者よりご案内します。'
@@ -181,6 +258,7 @@
         console.error(error);
         setStatus(form, '送信できませんでした。時間をおいて、もう一度お試しください。', true);
       } finally {
+        form.dataset.submitting = 'false';
         submitButton.disabled = false;
         submitButton.innerHTML = originalText;
       }
