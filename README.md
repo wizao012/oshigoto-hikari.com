@@ -1,85 +1,40 @@
-# おしごと光10G LP — GitHub Pages公開用
+# おしごと光10G LP
 
-HTML・CSS・JavaScriptだけで動作する静的LPです。外部ライブラリ、ビルド、サーバーサイド処理は不要です。すべて相対パスのため、GitHub Pagesのリポジトリ配下でも表示できます。
+法人・店舗向け「12ヶ月間 実質月額500円（税抜）」ワンコインキャンペーンの静的LPです。採用KVを主軸に、下段は説明・利用シーン・料金・品質・導入フローをコンテンツとして構成しています。キャンペーンの内訳と適用条件は、初期状態が閉じたアコーディオンに収録しています。
 
-## ローカル確認
+- リポジトリ: https://github.com/wizao012/oshigoto-hikari.com
+- 配信ドメイン: https://oshigoto-hikari.com/
+- GitHub Pages配信ファイルはリポジトリのルートに配置します。ビルドは不要です。
+- `CNAME` は `oshigoto-hikari.com`、`.nojekyll` は静的ファイル配信用です。
+- `index.html`、`styles.css`、`heritage.css`、`content.css`、`app.js` と、これらから参照する画像だけを同梱しています。
+- 全18ファイルは同一階層です。画像は `media-*.png` / `media-*.webp` の名前で配信します。
+- CSS・JavaScript参照にはキャッシュ更新用の `?v=20261014` を付けています。
 
-`index.html` をブラウザで開いてください。モバイル幅432pxを基準に表示されます。
+## 確認事項
 
-## GitHub Pagesで公開する手順
+HTML/CSSのローカル参照、ページ内リンク、配信ファイルの一致を確認済みです。採用KVのSHA-256は以下です。
 
-1. GitHubで新しいリポジトリを作成します。
-2. このフォルダの**中身**を、リポジトリのルートへアップロードします。
-3. GitHubの `Settings` → `Pages` を開きます。
-4. `Build and deployment` のSourceで `Deploy from a branch` を選択します。
-5. Branchを `main`、フォルダを `/(root)` にして保存します。
-6. 公開処理完了後、`https://アカウント名.github.io/リポジトリ名/` で表示を確認します。
+```text
+7eae92c9b5a5398096bf663729caab1e509b4ddbfea10b95ac8d0bb3d929c277
+```
 
-`.nojekyll` を同梱しているため、Jekyll変換を行わず静的ファイルをそのまま公開できます。
+問い合わせと提供エリア確認は、既存のZapier受信先を使う単一フォームです。提供エリアは住所・建物をもとに担当者が確認します。**本番フォームへの実送信テストは未実施です。** `no-cors` による送信のため、画面の完了表示だけではZapier側の受付結果を確認できません。
 
-## 公開前に設定する項目
+## 前LP（V1.0）と復旧
 
-- Webhook: 2つのフォームともZapierの指定Webhookへ設定済み
-- WebhookのCORS: 公開後、GitHub Pagesの公開URLからJSON POSTできることを実送信テスト
-- GTM: コンテナ `GTM-5VTFWXV6` を設定済み
-- 個人情報保護方針: 両フォームの同意文言とフッターを `https://012grp.co.jp/policy` へリンク済み（ワイズクラウド公式サイトの案内先）
-- 会社概要: フッターをワイズクラウドの `https://012cloud.jp/company` へリンク済み
-- SEO: 公開URL決定後、canonical、`og:url`、`og:image` を追加
+V1.0保存日: **2026-10-14**。保存タグ: **`v1.0`**。GitHub Release: [v1.0](https://github.com/wizao012/oshigoto-hikari.com/releases/tag/v1.0)。
 
-## フォームの現在の挙動
+前LPのV1.0はコミット [`9dc1ada675fe5a09900d1b84702f207b6baaa380`](https://github.com/wizao012/oshigoto-hikari.com/tree/9dc1ada675fe5a09900d1b84702f207b6baaa380) に保存されています。
 
-- 必須項目と入力形式をブラウザ側で確認します。
-- 2つのフォームから指定Zapier Webhookへ、URLエンコード形式でPOSTします。
-- ブラウザのCORS制限でZapierのレスポンスを読めずエラー表示になることを避けるため、`no-cors`のURLエンコード形式で1回だけPOSTします。
-- 静的サイトからはZapierのHTTP応答内容を確認できないため、画面上の完了表示は「ブラウザが送信処理を完了した」ことを示します。公開後にZapierの受信履歴でも確認してください。
-- `formType`、`campaign`、`submittedAt` も送信します。
-- エリア確認は、住所入力→市区町村単位の簡易判定→連絡先入力→担当者への詳細確認依頼、の2段階です。
-- 住所の簡易判定時はWebhook送信・CV計測を行いません。住所と連絡先を入力した最終送信時だけ、Webhook送信と `lead_form_submit` を1回実行します。
-- エリア確認の最終送信データには、郵便番号・都道府県・市区町村・町名番地・結合済み住所 `fullAddress` と連絡先が含まれます。
-- 簡易判定は「提供可能性があります」または「詳細確認が必要です」を表示します。正式な提供可否を確定するものではありません。
-- 判定結果にかかわらず、会社名・屋号、ご担当者名、電話番号、メールアドレス、個人情報保護方針への同意を入力して送信します。
-- 両フォームとも送信後は、入力フォームから専用の送信完了画面へ切り替わります。
-- 郵便番号検索はzipcloudの郵便番号検索APIを利用し、都道府県・市区町村・町域を自動入力します。検索時に外部へ送る値は郵便番号のみです。
-- 自動の10G提供可否判定APIは未接続です。現在は市区町村単位の簡易判定後、担当者が正式な提供可否を確認します。
-- お問い合わせフォームの入力項目は、会社名・屋号、ご担当者名、電話番号、メールアドレス、個人情報保護方針への同意です。業種入力はありません。
+V1.0へ戻す場合は、最新の `main` から復旧ブランチを作り、次の変更をPRとして `main` に反映します。過去の履歴は保持されます。
 
-## 電話CTA
+```sh
+git switch main
+git pull --ff-only origin main
+git switch -c restore-v1.0
+git restore --source=9dc1ada675fe5a09900d1b84702f207b6baaa380 --staged --worktree -- .
+git commit -m "Restore LP V1.0"
+git push -u origin restore-v1.0
+```
 
-- 電話番号: `050-1780-2661`
-- リンク形式: `tel:05017802661`
-- 料金案内後、FAQ、最終案内、画面下部の固定CTAに配置
-- GTM用属性: `data-cta-type="phone"` と `data-cta-location`
-
-## GTMコンバージョンイベント
-
-- リードフォームのWebhook送信処理成功時: `lead_form_submit` → ID `18435408379` / ラベル `fOQECJqNgPEcEPuD2NZE`
-- 電話リンクのクリック時: `click_to_call` → ID `18435408379` / ラベル `Cx0cCNOBg_EcEPuD2NZE`
-- リードイベントには`form_type`、電話イベントには`phone_number`と`cta_location`が含まれます。
-- GTMで上記のカスタムイベントトリガーを作成し、Google AdsコンバージョンID `18435408379`と各ラベルを設定してください。
-
-## キャンペーン表示
-
-- 「最大7万円キャッシュバック」へ更新済み
-- 適用条件・受取方法などの詳細は問い合わせ案内とし、未確定情報は記載していません
-- 旧キャンペーンが記載された画像は公開ページから除外しています
-
-## 検索対策
-
-- 店舗、インターネット、Wi-Fi、法人、光回線に関する説明をHTMLテキストで収録
-- 全19問のFAQとFAQPage構造化データを収録
-- 5問目以降は折りたたみ表示にしてページの長さを抑制
-
-## 画像素材
-
-- 新しいFV、キャッシュバック、料金、導入手順、最終CTAは、キャッチコピー・ピカりん・料金カード・CTAまで一体化した完成画像です
-- 各画像上のCTA位置には透明なアンカーリンクを重ね、ボタンとして操作できます
-- 画像内の主要文言は、クローリングとアクセシビリティのためHTMLにも非表示テキストとして収録しています
-- ファビコンはデフォルメ版ピカりん、エリア確認CTAは専用の位置ピン画像を使用しています
-
-## 主なファイル
-
-- `index.html`: LP本体、フォーム、構造化データ
-- `styles.css`: モバイル表示用スタイル
-- `script.js`: 入力確認とWebhook送信
-- `assets/`: LP画像、ロゴ、軽量化済みWebP画像
-- `.nojekyll`: GitHub Pages用設定
+PRをマージした後、GitHub Pagesの公開完了とドメインの表示を確認してください。履歴の詳細は `VERSION_HISTORY.md` を参照してください。
