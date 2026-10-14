@@ -103,39 +103,62 @@ html{scroll-padding-top:24px}
 }
 
 @media(min-width:1120px){
-  .lp-shell{display:grid;grid-template-columns:minmax(220px,1fr) 560px minmax(220px,1fr);gap:clamp(24px,2.4vw,40px);max-width:1208px;padding:0 24px}
+  .lp-shell{display:grid;grid-template-columns:minmax(220px,1fr) 560px minmax(220px,1fr);gap:clamp(24px,2.4vw,40px);max-width:1344px;padding:0 24px}
   .mobile-page{margin:0;box-shadow:0 0 0 1px #d9e6f2,0 0 25px #00265d05}
   .desktop-rail{display:block;position:sticky;top:0;height:100svh;align-self:start;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
-  .rail-inner{display:flex;flex-direction:column;justify-content:center;min-height:100%;padding:36px 0}
-  .rail-logo{display:block;max-width:250px;width:100%;margin:0 0 27px}
-  .rail-service{font-size:15px;font-weight:700;line-height:1.7;color:var(--navy);margin-bottom:13px}
-  .rail-catch{font-size:clamp(22px,1.7vw,24px);font-weight:800;line-height:1.7;letter-spacing:-.035em;color:var(--navy);margin-bottom:24px}
+  .rail-inner{display:flex;flex-direction:column;justify-content:center;min-height:100%;padding:32px 0}
+  .rail-logo{display:block;max-width:300px;width:100%;margin:0 0 29px}
+  .rail-service{font-size:clamp(16px,1.3vw,18px);font-weight:700;line-height:1.7;color:var(--navy);margin-bottom:17px}
+  .rail-catch{font-size:clamp(22px,1.9vw,30px);font-weight:800;line-height:1.65;letter-spacing:-.035em;color:var(--navy);margin-bottom:22px}
   .rail-catch em{display:block;color:#0879f4;white-space:nowrap}
-  .rail-period{display:inline-flex;align-self:flex-start;align-items:center;border-radius:5px;background:#e2efff;color:#0879f4;font-size:14px;font-weight:700;padding:3px 12px;margin-bottom:7px}
-  .rail-price-label{font-size:15px;font-weight:700;line-height:1.5;color:var(--navy)}
+  .rail-period{display:inline-flex;align-self:flex-start;align-items:center;border-radius:5px;background:#e2efff;color:#0879f4;font-size:clamp(16px,1.25vw,18px);font-weight:700;padding:3px 14px;margin-bottom:9px}
+  .rail-price-label{font-size:clamp(16px,1.25vw,18px);font-weight:700;line-height:1.5;color:var(--navy)}
   .rail-price{display:flex;align-items:baseline;gap:7px;line-height:1.12;color:#0879f4;margin:3px 0 20px}
-  .rail-price strong{font-size:74px;font-weight:800;letter-spacing:-.045em}
-  .rail-price strong span{font-size:28px;letter-spacing:0;margin-left:3px}
-  .rail-price small{font-size:12px;color:#657b94;white-space:nowrap}
-  .rail-deadline{background:#fff0a4;border-radius:6px;color:var(--navy);padding:10px 10px;text-align:center;font-size:13px;font-weight:700;line-height:1.75;margin-bottom:16px}
-  .rail-deadline strong{font-size:20px;letter-spacing:0;line-height:1}
-  .rail-notes{list-style:none;margin:0;padding:0;color:#8795a4;font-size:10.5px;line-height:1.85}
+  .rail-price strong{font-size:clamp(80px,6vw,96px);font-weight:800;letter-spacing:-.045em;white-space:nowrap;flex-shrink:0}
+  .rail-price strong span{font-size:clamp(28px,2.2vw,36px);letter-spacing:0;margin-left:3px}
+  .rail-price small{font-size:clamp(12px,.9vw,13px);color:#657b94;white-space:nowrap}
+  .rail-deadline{background:#fff0a4;border-radius:6px;color:var(--navy);padding:11px 10px;text-align:center;font-size:clamp(14px,1.05vw,16px);font-weight:700;line-height:1.75;margin-bottom:18px}
+  .rail-deadline strong{font-size:clamp(22px,1.6vw,26px);letter-spacing:0;line-height:1}
+  .rail-notes{list-style:none;margin:0;padding:0;color:#8795a4;font-size:12px;line-height:1.85}
   .rail-notes li{position:relative;padding-left:1em}
   .rail-notes li:before{content:'※';position:absolute;left:0}
-  .rail-details-link{align-self:flex-start;margin-top:11px;font-size:11px;color:#75889d;text-decoration:underline;text-underline-offset:3px;line-height:1.7}
+  .rail-details-link{align-self:flex-start;margin-top:13px;font-size:12px;color:#75889d;text-decoration:underline;text-underline-offset:3px;line-height:1.7}
   .rail-details-link:hover{color:var(--blue)}
   .rail-nav{display:flex;flex-direction:column;margin:0 0 24px}
-  .rail-nav a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #d4e3ef;font-size:15px;font-weight:700;color:var(--navy);line-height:1.7;transition:color .18s}
+  .rail-nav a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #d4e3ef;font-size:clamp(16px,1.15vw,18px);font-weight:700;color:var(--navy);line-height:1.7;transition:color .18s}
   .rail-nav a:hover{color:var(--blue)}
-  .rail-nav .icon{width:17px;height:17px;color:#0879f4}
-  .rail-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:15px;font-weight:700;line-height:1.6;min-height:58px;padding:15px 12px;border-radius:999px;margin:0}
-  .rail-cta .icon{width:20px;height:20px}
-  .rail-cta-secondary{border:1px solid #0879f4;background:#fff;color:#0879f4;min-height:52px;margin-top:11px}
+  .rail-nav .icon{width:19px;height:19px;color:#0879f4}
+  .rail-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:clamp(16px,1.15vw,18px);font-weight:700;line-height:1.6;min-height:64px;padding:16px 12px;border-radius:999px;margin:0}
+  .rail-cta .icon{width:22px;height:22px}
+  .rail-cta-secondary{border:1px solid #0879f4;background:#fff;color:#0879f4;min-height:60px;margin-top:12px}
   .rail-cta-secondary:hover{background:#f4faff}
   .rail-phone{border-top:1px solid #d4e3ef;padding-top:20px;margin-top:23px;text-align:center}
-  .rail-phone p{font-size:12px;color:#6f8196;line-height:1.7;margin-bottom:6px}
-  .rail-phone a{display:flex;justify-content:center;align-items:center;gap:7px;color:var(--navy);font-size:23px;font-weight:700;line-height:1.5;white-space:nowrap;letter-spacing:-.025em}
+  .rail-phone p{font-size:13px;color:#6f8196;line-height:1.7;margin-bottom:6px}
+  .rail-phone a{display:flex;justify-content:center;align-items:center;gap:8px;color:var(--navy);font-size:clamp(25px,1.65vw,28px);font-weight:700;line-height:1.5;white-space:nowrap;letter-spacing:-.025em}
+  .rail-phone .icon{width:22px;height:22px}
+}
+@media(min-width:1120px) and (max-width:1199px){
+  /* At the first desktop width, preserve the full price and phone on one line. */
+  .rail-price{gap:5px}
+  .rail-price strong{font-size:clamp(70px,6.2vw,74px)}
+  .rail-price strong span{font-size:26px}
+  .rail-price small{font-size:11px;flex-shrink:0}
+  .rail-phone a{font-size:23px;gap:6px}
   .rail-phone .icon{width:20px;height:20px}
+}
+@media(min-width:1120px) and (max-height:800px){
+  /* Keep both contact actions within reach on typical laptop screens. */
+  .rail-inner{padding:24px 0}
+  .rail-logo{margin-bottom:20px}
+  .rail-service{margin-bottom:12px;line-height:1.6}
+  .rail-catch{margin-bottom:16px;line-height:1.55}
+  .rail-price{margin-bottom:16px}
+  .rail-deadline{padding:9px 10px;margin-bottom:14px}
+  .rail-nav{margin-bottom:18px}
+  .rail-nav a{padding:9px 0;line-height:1.6}
+  .rail-cta{min-height:58px;padding:14px 12px}
+  .rail-cta-secondary{min-height:54px;margin-top:10px}
+  .rail-phone{padding-top:14px;margin-top:18px}
 }
 @media(max-width:760px){
   .mobile-page .footer-inner{padding-bottom:105px}
