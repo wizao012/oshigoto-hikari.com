@@ -14,10 +14,11 @@
   <meta property="og:image" content="https://oshigoto-hikari.com/media-hero-kv.png">
   <link rel="icon" href="favicon.png">
   <link rel="preload" as="image" href="media-hero-kv.png">
-  <link rel="stylesheet" href="styles.css?v=20261014">
-  <link rel="stylesheet" href="heritage.css?v=20261014">
-  <link rel="stylesheet" href="content.css?v=20261014">
-  <script src="app.js?v=20261014" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261014-2">
+  <link rel="stylesheet" href="heritage.css?v=20261014-2">
+  <link rel="stylesheet" href="content.css?v=20261014-2">
+  <link rel="stylesheet" href="desktop-layout.css?v=20261014-2">
+  <script src="app.js?v=20261014-2" defer></script>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5VTFWXV6');</script>
 </head>
 <body>
@@ -33,9 +34,25 @@
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="m7 3-4 2c-1 7 9 17 16 16l2-4-5-3-2 2c-3-1-5-3-6-6l2-2z"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 9c0 5-7 12-7 12S5 14 5 9a7 7 0 0 1 14 0Z"/><circle cx="12" cy="9" r="2"/></symbol>
   </defs></svg>
-  <header class="desktop-header">
-    <div class="header-inner"><a href="#top" aria-label="おしごと光10G トップ"><img src="media-logo.png" width="1994" height="373" alt="おしごと光10G"></a><nav aria-label="ページ内ナビゲーション"><a href="#scenes">利用シーン</a><a href="#flow">導入の流れ</a><a href="#faq">よくある質問</a><a class="header-cta" href="#inquiry">お問い合わせ <span aria-hidden="true">›</span></a></nav></div>
-  </header>
+  <div class="lp-shell">
+<aside class="desktop-rail rail-left" aria-label="おしごと光10G キャンペーンのご案内">
+  <div class="rail-inner">
+    <a class="rail-logo" href="#top" aria-label="おしごと光10G トップ"><img src="media-logo.png" alt="おしごと光10G" width="1994" height="373"></a>
+    <p class="rail-service">法人・店舗向け<br>10ギガ光回線</p>
+    <p class="rail-catch">驚きのスピードを、<em>驚きのワンコインで。</em></p>
+    <span class="rail-period">12ヶ月間</span>
+    <p class="rail-price-label">実質月額</p>
+    <p class="rail-price"><strong>500<span>円</span></strong><small>（税抜）</small></p>
+    <p class="rail-deadline"><strong>10月31日</strong>までの<br>お申し込み限定</p>
+    <ul class="rail-notes">
+      <li>対象サービスとの同時申込が条件です。</li>
+      <li>キャッシュバック適用後の実質月額です。</li>
+      <li>キャッシュバック受け取りには条件がございます。</li>
+    </ul>
+    <a class="rail-details-link" href="#campaign-details" data-open-details="campaign-details">キャンペーン内容・適用条件を確認する</a>
+  </div>
+</aside>
+    <div class="mobile-page">
   <main id="top">
     <section class="hero" aria-labelledby="hero-heading">
       <h1 class="sr-only" id="hero-heading">驚きのスピードを、驚きのワンコインで。</h1>
@@ -66,9 +83,11 @@
         <figure class="content-figure comparison-figure"><div class="media-crop " style="aspect-ratio:949/961"><img src="media-original-01-comparison.png" width="1043" height="1508" alt="従来の光回線と10G回線のデータの通り道を比較したイメージ" style="width:109.905163%;left:-4.952582%;top:-32.986472%" loading="lazy"></div><figcaption>※図はイメージです。通信速度は技術規格上の最大値であり、実効速度は利用環境により変動します。</figcaption></figure></div>
       </section>
 
-      <section class="body-section devices-content" id="devices" aria-labelledby="devices-heading">
-        <div class="body-inner content-split"><div class="body-copy"><h2 id="devices-heading">仕事の通信を、<br><em>まとめて支える。</em></h2><p>お店やオフィスで使う端末を、<br>ひとつの回線で。</p></div>
-        <figure class="content-figure devices-figure"><div class="media-crop " style="aspect-ratio:949/1116"><img src="media-original-02-connections.png" width="1018" height="1545" alt="POSレジ、キャッシュレス決済、予約・注文端末、防犯カメラ、お客様用Wi-Fi、パソコン・スマホを10Gへ接続するイメージ" style="width:107.270811%;left:-3.266596%;top:-33.154122%" loading="lazy"></div><figcaption>※接続のイメージです。対応機器・ネットワーク環境の整備が必要です。</figcaption></figure></div>
+      <section class="devices-image-section" id="devices" aria-labelledby="devices-heading">
+        <h2 class="sr-only" id="devices-heading">お仕事で使う端末を、まとめて１０Gへ</h2>
+        <p class="sr-only">仕事に欠かせない通信を、おしごと光10Gで。</p>
+        <img class="devices-business-image" src="media-devices-business-20261014.png" width="1024" height="1536" loading="lazy" alt="お会計にはPOSレジ・キャッシュレス決済、店舗の運営には予約・注文端末・防犯カメラ、お客様用Wi-Fiと業務用のパソコン・スマホ。仕事の端末をまとめて10Gへ。">
+        <p class="sr-only">※接続のイメージです。対応機器・ネットワーク環境の整備が必要です。</p>
       </section>
 
       <section class="body-section scenes-content" id="scenes" aria-labelledby="scenes-heading"><div class="body-inner">
@@ -124,6 +143,27 @@
     </div>
   </main>
   <footer><div class="container footer-inner"><a href="#top" aria-label="おしごと光10G トップ"><img src="media-logo.png" alt="おしごと光10G" width="1994" height="373" loading="lazy"></a><nav aria-label="運営情報"><a href="https://012cloud.jp/company" target="_blank" rel="noopener noreferrer">会社概要</a><a href="https://012grp.co.jp/policy" target="_blank" rel="noopener noreferrer">個人情報保護方針</a></nav></div></footer>
+    </div>
+<aside class="desktop-rail rail-right" aria-label="ページ内メニュー・お問い合わせ">
+  <div class="rail-inner">
+    <nav class="rail-nav" aria-label="ページ内メニュー">
+      <a href="#about">10Gって、なにが違う？<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a href="#devices">お仕事で使う端末を10Gへ<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a href="#scenes">利用シーン<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a href="#campaign">ワンコインキャンペーン<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a href="#quality">仕事を支える回線品質<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a href="#flow">導入の流れ<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a href="#faq">よくある質問<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </nav>
+    <a class="rail-cta primary" href="#inquiry">お問い合わせ<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <a class="rail-cta rail-cta-secondary" href="#inquiry" data-select-area><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>提供エリアを確認する</a>
+    <div class="rail-phone">
+      <p>お電話でのお問い合わせ</p>
+      <a href="tel:05017802661" data-cta-location="desktop-rail"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>050-1780-2661</a>
+    </div>
+  </div>
+</aside>
+  </div>
   <div class="mobile-sticky" hidden><a href="#inquiry" data-select-area><svg class="icon"><use href="#i-pin"/></svg>提供エリア確認</a><a href="#inquiry" class="sticky-primary">お問い合わせ <svg class="icon"><use href="#i-arrow"/></svg></a></div>
 </body>
 </html>

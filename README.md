@@ -6,9 +6,9 @@
 - 配信ドメイン: https://oshigoto-hikari.com/
 - GitHub Pages配信ファイルはリポジトリのルートに配置します。ビルドは不要です。
 - `CNAME` は `oshigoto-hikari.com`、`.nojekyll` は静的ファイル配信用です。
-- `index.html`、`styles.css`、`heritage.css`、`content.css`、`app.js` と、これらから参照する画像だけを同梱しています。
-- 全18ファイルは同一階層です。画像は `media-*.png` / `media-*.webp` の名前で配信します。
-- CSS・JavaScript参照にはキャッシュ更新用の `?v=20261014` を付けています。
+- `index.html`、`styles.css`、`heritage.css`、`content.css`、`desktop-layout.css`、`app.js` と、これらから参照する画像だけを同梱しています。
+- 配信ファイルは同一階層です。画像は `media-*.png` / `media-*.webp` の名前で配信します。
+- CSS・JavaScript参照にはキャッシュ更新用の `?v=20261014-2` を付けています。
 
 ## 確認事項
 
@@ -38,3 +38,7 @@ git push -u origin restore-v1.0
 ```
 
 PRをマージした後、GitHub Pagesの公開完了とドメインの表示を確認してください。履歴の詳細は `VERSION_HISTORY.md` を参照してください。
+
+## 2026-10-14 デザイン更新
+
+端末セクションは採用した業務別の画像に変更し、見出しを「お仕事で使う端末を、まとめて１０Gへ」に更新しました。PCでは中央のスマホと同じ単列コンテンツを、左のキャンペーン訴求・右のメニュー／問い合わせCTAで挟みます。画面幅1120px以上で左右が追従し、狭い画面では中央のみを表示します。`desktop-layout.css`は最後に読み込みます。
