@@ -1,0 +1,149 @@
+/* A continuous mobile-width page, with stationary desktop information rails. */
+body{background:#edf4fa}
+html{scroll-padding-top:24px}
+.desktop-header,.desktop-hero-copy{display:none}
+.lp-shell{width:100%;margin:0 auto}
+.mobile-page{width:100%;max-width:560px;min-width:0;margin:0 auto;background:#fff}
+.desktop-rail{display:none}
+.mobile-page .hero{background:#fff;border:0}
+.mobile-page .hero-inner{display:block;max-width:none;padding:0;margin:0}
+.mobile-page .hero-art{border-radius:0}
+.mobile-page .hero-links{display:flex;max-width:none;margin:0;justify-content:center;align-items:center;padding:17px 4px;background:#f5fbff;border-top:1px solid #edf0f4;border-bottom:1px solid #e4eaf0}
+.mobile-page .hero-links a{font-size:12px;line-height:1.7;padding:0 10px;color:#7c8795}
+.mobile-page .hero-links a+a{border-left:1px solid #dce5ee;color:var(--blue)}
+.mobile-page #content{width:100%;max-width:none}
+.mobile-page .footer-inner{max-width:none;flex-direction:column;gap:21px;padding:30px 22px 40px;background:#f5fbff}
+.mobile-page .footer-inner img{width:195px}
+.mobile-page .footer-inner nav{font-size:12px;gap:25px}
+
+@media(min-width:761px){
+  /* The centre follows the same reading order and scale as the phone page. */
+  .mobile-page .container,.mobile-page .narrow{padding:0 22px}
+  .mobile-page #content .body-section{padding:43px 0}
+  .mobile-page #content .body-inner{max-width:none;padding:0 22px}
+  .mobile-page #content .body-section h2{font-size:27px;line-height:1.55;margin-bottom:23px}
+  .mobile-page #content .body-copy h2{margin-bottom:13px}
+  .mobile-page #content .body-copy p{font-size:17px;line-height:1.85}
+  .mobile-page #content .content-split{display:flex;flex-direction:column;gap:25px;align-items:stretch}
+  .mobile-page .content-figure{width:100%;max-width:440px;margin:auto}
+  .mobile-page .content-figure figcaption,.mobile-page .content-note{font-size:12px;line-height:1.8;margin-top:12px}
+  .mobile-page .usecase-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px}
+  .mobile-page .usecase-grid li{border-radius:10px}
+  .mobile-page #content .usecase-grid h3{font-size:17px;padding:10px 11px;line-height:1.6}
+  .mobile-page .price-summary{padding:23px 18px;gap:15px;align-items:center;justify-content:space-between;border-radius:12px}
+  .mobile-page .price-period{font-size:17px;padding-right:15px}
+  .mobile-page .price-value{gap:3px}
+  .mobile-page .price-label{font-size:17px;width:100%;margin-bottom:2px}
+  .mobile-page .price-value>strong{font-size:60px;line-height:1.2}
+  .mobile-page .price-value>strong>span{font-size:25px}
+  .mobile-page .price-value>small{font-size:12px}
+  .mobile-page .campaign-deadline{font-size:16px;margin-top:17px}
+  .mobile-page .campaign-note{margin-bottom:21px}
+  .mobile-page #content .campaign-accordion>summary{font-size:17px;padding:19px 16px;line-height:1.7;gap:12px}
+  .mobile-page .campaign-accordion .accordion-body{padding:7px 16px 24px}
+  .mobile-page .accordion-body{font-size:17px}
+  .mobile-page .accordion-body h3{font-size:20px;line-height:1.6}
+  .mobile-page .accordion-body .fine{font-size:12px}
+  .mobile-page .price-equation{font-size:17px;display:block;padding:16px;line-height:2}
+  .mobile-page .price-equation span,.mobile-page .price-equation b,.mobile-page .price-equation strong{display:block}
+  .mobile-page .price-equation b{line-height:1.3;color:#7e8d98}
+  .mobile-page .price-equation strong{font-size:21px}
+  .mobile-page .campaign-table>div{display:block;padding:16px 0}
+  .mobile-page .campaign-table dt{font-size:17px;max-width:none;margin-bottom:8px}
+  .mobile-page .campaign-table dd{font-size:17px}
+  .mobile-page .campaign-table dd strong{font-size:23px}
+  .mobile-page .conditions-list{font-size:17px}
+  .mobile-page #content .campaign-action{font-size:17px;min-height:59px;margin-top:21px}
+  .mobile-page .quality-rows{display:block}
+  .mobile-page .quality-rows li{padding:22px 0;gap:18px;border-bottom:1px solid #e0ebf4}
+  .mobile-page .quality-rows li:first-child{padding-top:0}
+  .mobile-page .quality-art{width:58px}
+  .mobile-page #content .quality-rows h3{font-size:19px;line-height:1.6}
+  .mobile-page #content .quality-rows p{font-size:17px;margin-top:6px;line-height:1.75}
+  .mobile-page .steps-content{display:flex;flex-direction:column;gap:14px}
+  .mobile-page .steps-content li{grid-template-columns:30px minmax(0,1fr) 58px;align-items:center;gap:12px;padding:21px 17px;border-radius:12px}
+  .mobile-page .flow-number{align-self:start;margin-top:2px}
+  .mobile-page .step-art{grid-column:3;width:58px;margin-top:0}
+  .mobile-page #content .steps-content h3{font-size:18px;line-height:1.65}
+  .mobile-page #content .steps-content p{font-size:17px;line-height:1.75;margin-top:5px}
+  .mobile-page .flow-area-link{margin-top:22px;font-size:16px}
+  .mobile-page #content .faq-section{padding:43px 0}
+  .mobile-page #content .faq-section .narrow{max-width:none;padding:0 22px}
+  .mobile-page #content .section-heading{margin-bottom:22px}
+  .mobile-page #content .section-heading h2{font-size:27px;line-height:1.55}
+  .mobile-page #content .section-heading .eyebrow{font-size:13px}
+  .mobile-page #content .faq-section .accordion{padding:0 14px}
+  .mobile-page #content .faq-section .accordion>summary{font-size:17px;gap:10px;padding:20px 0;line-height:1.8}
+  .mobile-page .faq-q{width:29px;height:29px}
+  .mobile-page .faq-section .accordion-body{font-size:17px;padding:0 0 24px}
+  .mobile-page .faq-section .accordion-body .text-link{font-size:16px}
+  .mobile-page #content .inquiry-section{padding:43px 0}
+  .mobile-page #content .inquiry-section .narrow{max-width:none}
+  .mobile-page #content .inquiry-section .section-heading p:last-child{font-size:17px;line-height:1.8;margin-top:16px}
+  .mobile-page .lead-form{padding:24px 18px;border-radius:14px}
+  .mobile-page .inquiry-type{gap:8px}
+  .mobile-page .inquiry-type legend{font-size:17px}
+  .mobile-page .inquiry-type label{min-width:100%}
+  .mobile-page .inquiry-type span{font-size:17px;padding:16px 12px 16px 39px}
+  .mobile-page .inquiry-type input{left:14px;top:23px}
+  .mobile-page .form-row{display:block}
+  .mobile-page .lead-form>label,.mobile-page .form-row>label,.mobile-page .address-fields>label{font-size:17px;margin-top:25px}
+  .mobile-page .lead-form input:not([type=radio]):not([type=checkbox]),.mobile-page .lead-form select,.mobile-page .lead-form textarea{font-size:17px;padding:14px 12px}
+  .mobile-page .address-fields legend{font-size:17px}
+  .mobile-page .lead-form .address-fields{padding:16px 12px}
+  .mobile-page .lead-form .privacy-check{font-size:14px;gap:10px;justify-content:flex-start}
+  .mobile-page .privacy-check input{width:17px;height:17px;margin-top:5px}
+  .mobile-page .form-status{font-size:14px}
+  .mobile-page .submit-button{font-size:17px;gap:12px;padding:14px 16px}
+  .mobile-page .phone-contact p{font-size:15px}
+  .mobile-page .phone-contact a{font-size:27px}
+  .mobile-page .form-complete h3{font-size:21px}
+  .mobile-page .form-complete p{font-size:17px}
+  .mobile-page .text-link{font-size:17px}
+}
+
+@media(min-width:1120px){
+  .lp-shell{display:grid;grid-template-columns:minmax(220px,1fr) 560px minmax(220px,1fr);gap:clamp(24px,2.4vw,40px);max-width:1208px;padding:0 24px}
+  .mobile-page{margin:0;box-shadow:0 0 0 1px #d9e6f2,0 0 25px #00265d05}
+  .desktop-rail{display:block;position:sticky;top:0;height:100svh;align-self:start;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+  .rail-inner{display:flex;flex-direction:column;justify-content:center;min-height:100%;padding:36px 0}
+  .rail-logo{display:block;max-width:250px;width:100%;margin:0 0 27px}
+  .rail-service{font-size:15px;font-weight:700;line-height:1.7;color:var(--navy);margin-bottom:13px}
+  .rail-catch{font-size:clamp(22px,1.7vw,24px);font-weight:800;line-height:1.7;letter-spacing:-.035em;color:var(--navy);margin-bottom:24px}
+  .rail-catch em{display:block;color:#0879f4;white-space:nowrap}
+  .rail-period{display:inline-flex;align-self:flex-start;align-items:center;border-radius:5px;background:#e2efff;color:#0879f4;font-size:14px;font-weight:700;padding:3px 12px;margin-bottom:7px}
+  .rail-price-label{font-size:15px;font-weight:700;line-height:1.5;color:var(--navy)}
+  .rail-price{display:flex;align-items:baseline;gap:7px;line-height:1.12;color:#0879f4;margin:3px 0 20px}
+  .rail-price strong{font-size:74px;font-weight:800;letter-spacing:-.045em}
+  .rail-price strong span{font-size:28px;letter-spacing:0;margin-left:3px}
+  .rail-price small{font-size:12px;color:#657b94;white-space:nowrap}
+  .rail-deadline{background:#fff0a4;border-radius:6px;color:var(--navy);padding:10px 10px;text-align:center;font-size:13px;font-weight:700;line-height:1.75;margin-bottom:16px}
+  .rail-deadline strong{font-size:20px;letter-spacing:0;line-height:1}
+  .rail-notes{list-style:none;margin:0;padding:0;color:#8795a4;font-size:10.5px;line-height:1.85}
+  .rail-notes li{position:relative;padding-left:1em}
+  .rail-notes li:before{content:'※';position:absolute;left:0}
+  .rail-details-link{align-self:flex-start;margin-top:11px;font-size:11px;color:#75889d;text-decoration:underline;text-underline-offset:3px;line-height:1.7}
+  .rail-details-link:hover{color:var(--blue)}
+  .rail-nav{display:flex;flex-direction:column;margin:0 0 24px}
+  .rail-nav a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #d4e3ef;font-size:15px;font-weight:700;color:var(--navy);line-height:1.7;transition:color .18s}
+  .rail-nav a:hover{color:var(--blue)}
+  .rail-nav .icon{width:17px;height:17px;color:#0879f4}
+  .rail-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:15px;font-weight:700;line-height:1.6;min-height:58px;padding:15px 12px;border-radius:999px;margin:0}
+  .rail-cta .icon{width:20px;height:20px}
+  .rail-cta-secondary{border:1px solid #0879f4;background:#fff;color:#0879f4;min-height:52px;margin-top:11px}
+  .rail-cta-secondary:hover{background:#f4faff}
+  .rail-phone{border-top:1px solid #d4e3ef;padding-top:20px;margin-top:23px;text-align:center}
+  .rail-phone p{font-size:12px;color:#6f8196;line-height:1.7;margin-bottom:6px}
+  .rail-phone a{display:flex;justify-content:center;align-items:center;gap:7px;color:var(--navy);font-size:23px;font-weight:700;line-height:1.5;white-space:nowrap;letter-spacing:-.025em}
+  .rail-phone .icon{width:20px;height:20px}
+}
+@media(max-width:760px){
+  .mobile-page .footer-inner{padding-bottom:105px}
+}
+@media(max-width:350px){
+  .mobile-page .hero-links a{font-size:11px;padding:0 8px}
+}
+
+/* Approved image-led device section. */
+.devices-image-section{padding:0;background:#f2f8ff}
+.devices-business-image{display:block;width:100%;height:auto}
