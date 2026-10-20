@@ -1,5 +1,8 @@
 (() => {
   'use strict';
+  let attributionStorage;
+  try { attributionStorage = window.sessionStorage; } catch (_) { /* Blocked browser storage. */ }
+  const attribution = window.OshigotoAttribution?.createAttribution(window.location.search, attributionStorage);
   const form = document.querySelector('#lead-form');
   const addressFields = document.querySelector('#address-fields');
   const submitLabel = document.querySelector('#submit-label');
@@ -30,7 +33,7 @@
     if (!target) return;
     event.preventDefault();
     target.scrollIntoView({behavior:'smooth', block:'start'});
-    window.history.replaceState(null, '', fragment);
+    window.history.replaceState(null, '', window.location.pathname + window.location.search + fragment);
   }));
   document.querySelectorAll('a[href^="tel:"]').forEach(link => link.addEventListener('click', () => track('click_to_call', { phone_number:'050-1780-2661', cta_location:link.dataset.ctaLocation || 'unknown' })));
   let heroPast = false; let inquiryVisible = false;
@@ -47,6 +50,7 @@
     event.preventDefault(); if (form.dataset.submitting === 'true') return;
     if (!form.checkValidity()) { form.reportValidity(); status('未入力の項目や入力形式をご確認ください。', true); return; }
     const payload = Object.fromEntries(new FormData(form).entries());
+    Object.assign(payload, attribution?.getPayload() || {});
     payload.formType = payload.inquiryType === 'area' ? 'area' : 'consultation';
     payload.campaign = '10ギガ ワンコインキャンペーン（12ヶ月実質月額500円・税抜）';
     payload.submittedAt = new Date().toISOString();

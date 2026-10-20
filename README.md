@@ -6,9 +6,9 @@
 - 配信ドメイン: https://oshigoto-hikari.com/
 - GitHub Pages配信ファイルはリポジトリのルートに配置します。ビルドは不要です。
 - `CNAME` は `oshigoto-hikari.com`、`.nojekyll` は静的ファイル配信用です。
-- `index.html`、`styles.css`、`heritage.css`、`content.css`、`desktop-layout.css`、`typography.css`、`app.js` と、これらから参照する画像だけを同梱しています。
+- `index.html`、CSS、`attribution.js`、`app.js` と、これらから参照する画像を配信します。`attribution.test.cjs` はNode.jsで実行する検証用ファイルです。
 - 配信ファイルは同一階層です。画像は `media-*.png` / `media-*.webp` の名前で配信します。
-- CSS・JavaScript参照にはキャッシュ更新用の `?v=20261014-3` を付けています。
+- CSS・JavaScript参照にはキャッシュ更新用の `?v=...` を付けています。
 
 ## 確認事項
 
@@ -19,6 +19,35 @@ HTML/CSSのローカル参照、ページ内リンク、配信ファイルの一
 ```
 
 問い合わせと提供エリア確認は、既存のZapier受信先を使う単一フォームです。提供エリアは住所・建物をもとに担当者が確認します。**本番フォームへの実送信テストは未実施です。** `no-cors` による送信のため、画面の完了表示だけではZapier側の受付結果を確認できません。
+
+## 2026-10-20 広告流入パラメータ
+
+問い合わせ・提供エリア確認の両方で、URLから取得した次の値を既存の送信データに追加します。
+
+- `utm_source`、`utm_medium`、`utm_campaign`、`utm_term`、`utm_content`
+- `keyword`、`google_keyword`、`campaign_id`、`adgroup_id`、`ad_id`、`adset_id`
+- `matchtype`、`network`、`device`、`placement`、`site_source_name`
+- `gclid`、`gbraid`、`wbraid`、`fbclid`
+
+同一タブのsessionStorageへ保存するため、ページ内移動・パラメータのない再読み込み・フォームの再入力でも保持します。新しい広告パラメータ付きで訪問すると、以前の媒体の情報を残さず一式を置き換えます。ストレージが使えない場合も現在のページの値を送信できます。未指定の項目は空欄で、GoogleやMetaの流入を推測して補完しません。通常のフォーム内容に加え、上記の許可したURL項目のみを取得します。
+
+Google広告の「最終ページURLのサフィックス」設定例（先頭の `?` は不要）：
+
+```text
+utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_term={keyword}&utm_content={creative}&adgroup_id={adgroupid}
+```
+
+`utm_campaign` はキャンペーンIDの代わりに任意の固定名も指定できます。`google_keyword` はGoogle流入の `utm_term` を優先し、空欄なら `keyword` を使います。ValueTrackの `{keyword}` はマッチした登録キーワードであり、実際の検索語句ではありません。キーワードを使わない配信では空欄になることがあります。[Google公式説明](https://support.google.com/google-ads/answer/6305348?hl=ja)
+
+Meta広告の「URLパラメーター」設定例（`onecoin_10g` は任意のキャンペーン名へ変更）：
+
+```text
+utm_source=meta&utm_medium=paid_social&utm_campaign=onecoin_10g
+```
+
+広告アカウント側のURL設定は別途必要です。Zapierの後続ステップで通知やCRMにも表示する場合は、受信データの追加項目をマッピングしてください。商品説明用の既存 `campaign` と広告用の `utm_campaign` は別項目です。
+
+検証：`node --test attribution.test.cjs`。実ブラウザーではGTMを外し送信先をローカル受信専用URLへ差し替えた環境で、Google相談・Googleエリア確認・Meta相談の送信データを確認しました。本番のZapierにテストリードは送信していません。
 
 ## 前LP（V1.0）と復旧
 
