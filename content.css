@@ -40,3 +40,16 @@ footer .footer-inner{max-width:1100px}
   #content .faq-section{padding:43px 0}#content .faq-section .narrow{max-width:560px;padding:0 22px}#content .section-heading{margin-bottom:22px}#content .section-heading h2{font-size:27px;line-height:1.55}#content .section-heading .eyebrow{font-size:13px}#content .faq-section .accordion>summary{font-size:17px}#content .inquiry-section{padding:43px 0}#content .inquiry-section .narrow{max-width:560px}#content .inquiry-section .section-heading p:last-child{font-size:17px}
 }
 @media(max-width:350px){#content .body-inner,#content .faq-section .narrow{padding-left:18px;padding-right:18px}#content .body-section h2,#content .section-heading h2{font-size:25px}.price-summary{padding:20px 14px;gap:12px}.price-period{font-size:16px;padding-right:12px}.price-value>strong{font-size:53px}.steps-content li{grid-template-columns:28px minmax(0,1fr) 48px;padding:20px 13px;gap:10px}.step-art{width:48px}#content .usecase-grid h3{font-size:16px;padding:10px 9px}}
+
+/* Show the four main questions first; keep further answers in native HTML. */
+#content .faq-more{margin-top:22px}
+#content .faq-more>summary{display:flex;align-items:center;justify-content:center;gap:14px;min-height:60px;padding:15px 18px;list-style:none;cursor:pointer;border:1px solid #9fc9ee;border-radius:10px;background:#f0f7ff;color:#0877ec;font-size:17px;font-weight:700;line-height:1.7;text-align:center}
+#content .faq-more>summary::-webkit-details-marker{display:none}
+#content .faq-more>summary:hover{background:#e5f2ff}
+#content .faq-more-count{margin-left:4px;color:#526a86;font-size:14px;font-weight:500}
+#content .faq-more-close{display:none}
+#content .faq-more[open]>summary .faq-more-open{display:none}
+#content .faq-more[open]>summary .faq-more-close{display:inline}
+#content .faq-more[open]>summary .plus:after{transform:rotate(0)}
+#content .faq-more-body{padding-top:2px}
+@media(max-width:760px){#content .faq-more>summary{font-size:16px;padding:15px 12px;gap:10px}}
