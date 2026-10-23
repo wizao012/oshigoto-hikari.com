@@ -36,11 +36,11 @@
     window.history.replaceState(null, '', window.location.pathname + window.location.search + fragment);
   }));
   document.querySelectorAll('a[href^="tel:"]').forEach(link => link.addEventListener('click', () => track('click_to_call', { phone_number:'050-1780-2661', cta_location:link.dataset.ctaLocation || 'unknown' })));
-  let heroPast = false; let inquiryVisible = false;
-  const updateSticky = () => { sticky.hidden = !heroPast || inquiryVisible; };
+  let heroPast = false; let phoneCardVisible = false;
+  const updateSticky = () => { sticky.hidden = !heroPast || phoneCardVisible; };
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([entry]) => { heroPast = !entry.isIntersecting && entry.boundingClientRect.top < 0; updateSticky(); }, {threshold:0}).observe(document.querySelector('.hero'));
-    new IntersectionObserver(([entry]) => { inquiryVisible = entry.isIntersecting; updateSticky(); }, {threshold:0}).observe(document.querySelector('#inquiry'));
+    new IntersectionObserver(([entry]) => { phoneCardVisible = entry.isIntersecting && entry.intersectionRatio >= .75; updateSticky(); }, {threshold:.75}).observe(document.querySelector('.phone-contact-action'));
   }
   document.querySelector('#postal-code').addEventListener('input', event => {
     const digits = event.target.value.replace(/[０-９]/g, c => String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/\D/g,'').slice(0,7);
