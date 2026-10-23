@@ -1,0 +1,73 @@
+/* Phone contact cards and responsive call-to-action layout. */
+.mobile-page #content .inquiry-section .section-heading .inquiry-intro{max-width:none;margin-top:16px;font-size:16px;line-height:1.85}
+.inquiry-intro>span{display:block}
+.mobile-page .phone-contact{
+  margin:0 0 24px;padding:16px 16px 14px;
+  border:1px solid #bad6f0;border-radius:14px;background:#fff;text-align:center;
+}
+.mobile-page .phone-contact .phone-contact-intro{
+  margin:0 0 10px;font-size:16px;font-weight:700;line-height:1.7;color:var(--navy);
+}
+.mobile-page .phone-contact .phone-contact-action{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  gap:3px;margin:0;padding:11px 10px;border-radius:10px;
+  background:#0877ec;color:#fff;letter-spacing:0;line-height:1.4;
+  transition:background .18s;
+}
+.mobile-page .phone-contact .phone-contact-action:hover{background:#0064cf}
+.phone-contact-label{display:flex;justify-content:center;align-items:center;gap:7px;font-size:15px;font-weight:700}
+.phone-contact-label .icon{width:19px;height:19px}
+.phone-contact-action strong{font-size:28px;font-weight:800;letter-spacing:-.025em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.mobile-page .phone-contact .phone-contact-note{margin:10px 0 0;color:#62758b;font-size:12px;line-height:1.8}
+.form-contact-heading{display:flex;align-items:center;gap:12px;margin:0 0 20px;color:var(--navy);font-size:16px;font-weight:700;line-height:1.7;text-align:center}
+.form-contact-heading::before,.form-contact-heading::after{content:"";height:1px;flex:1;background:#c4d8ec}
+
+@media(max-width:1119px){
+  .mobile-sticky{
+    position:fixed;bottom:0;left:0;right:0;z-index:15;
+    display:flex;justify-content:center;gap:8px;
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    border-top:1px solid #c9dbed;background:#fff;box-shadow:0 -4px 18px #00265d0d;
+  }
+  .mobile-sticky>a{
+    display:flex;align-items:center;justify-content:center;gap:8px;flex:1;
+    min-width:0;max-width:242px;min-height:64px;padding:9px 10px;
+    border:1px solid transparent;border-radius:10px;line-height:1.4;
+  }
+  .mobile-sticky>a.sticky-phone{flex:1.25;background:#0877ec;border-color:#0877ec;color:#fff}
+  .mobile-sticky>a.sticky-phone:hover{background:#0064cf}
+  .mobile-sticky .sticky-phone>.icon{width:23px;height:23px}
+  .mobile-sticky>a>span{display:flex;flex-direction:column;align-items:center;gap:4px}
+  .mobile-sticky strong{font-size:16px;font-weight:800;white-space:nowrap}
+  .mobile-sticky small{font-size:11px;font-weight:500;white-space:nowrap}
+  .mobile-sticky .sticky-phone small{font-size:13px;font-weight:600;letter-spacing:.015em;font-variant-numeric:tabular-nums}
+  .mobile-sticky>a.sticky-primary{background:#ff8500;border-color:#ff8500;color:#fff}
+  .mobile-sticky .sticky-primary>.icon{width:16px;height:16px}
+  .mobile-page .footer-inner{padding-bottom:125px}
+  .mobile-page .submit-button{scroll-margin-bottom:100px}
+}
+@media(max-width:359px){
+  .mobile-sticky{padding-left:8px;padding-right:8px;gap:7px}
+  .mobile-sticky>a{padding:9px 7px;gap:6px}
+  .mobile-sticky strong{font-size:14px}
+  .mobile-sticky .sticky-phone>.icon{width:20px;height:20px}
+  .mobile-sticky .sticky-phone small{font-size:12px}
+  .mobile-page .phone-contact{padding:15px 12px 13px}
+  .mobile-page .phone-contact .phone-contact-intro{font-size:15px}
+  .phone-contact-action strong{font-size:26px}
+}
+@media(min-width:1120px){
+  .rail-right .rail-nav{margin-bottom:20px}
+  .rail-right .rail-phone{margin:0 0 14px;padding:0;border:0;text-align:center}
+  .rail-right .rail-phone>p{margin:0 0 9px;font-size:14px;font-weight:700;line-height:1.6;color:var(--navy)}
+  .rail-right .rail-phone .rail-phone-action{
+    display:flex;flex-direction:column;gap:6px;padding:17px 8px 16px;
+    border-radius:12px;background:#0877ec;color:#fff;line-height:1.4;letter-spacing:0;
+  }
+  .rail-right .rail-phone .rail-phone-action:hover{background:#0064cf}
+  .rail-phone-label{display:flex;align-items:center;justify-content:center;gap:8px;font-size:17px;font-weight:700}
+  .rail-right .rail-phone .icon{width:21px;height:21px}
+  .rail-phone-action strong{font-size:clamp(23px,1.8vw,28px);font-weight:800;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+  .rail-right .rail-cta{font-size:16px;min-height:58px;padding:14px 10px}
+}
+@media(prefers-reduced-motion:reduce){.phone-contact-action{transition:none}}

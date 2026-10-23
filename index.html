@@ -19,8 +19,10 @@
   <link rel="stylesheet" href="content.css?v=20261020-faq2">
   <link rel="stylesheet" href="desktop-layout.css?v=20261014-3">
   <link rel="stylesheet" href="typography.css?v=20261014-3">
+  <link rel="stylesheet" href="phone-cta.css?v=20261023-1">
+  <link rel="stylesheet" href="content-text.css?v=20261023-1">
   <script src="attribution.js?v=20261020-1" defer></script>
-  <script src="app.js?v=20261020-attribution" defer></script>
+  <script src="app.js?v=20261023-1" defer></script>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5VTFWXV6');</script>
 </head>
 <body>
@@ -57,7 +59,6 @@
     <div class="mobile-page">
   <main id="top">
     <section class="hero" aria-labelledby="hero-heading">
-      <h1 class="sr-only" id="hero-heading">法人・店舗向け10ギガ光回線 おしごと光10G。驚きのスピードを、驚きのワンコインで。</h1>
       <div class="hero-inner">
         <div class="hero-art">
           <img class="kv" src="media-hero-kv.png" width="941" height="1672" fetchpriority="high" alt="法人・店舗向け10ギガ光回線。驚きのスピードを、驚きのワンコインで。12ヶ月間、実質月額500円（税抜）。10月31日までのお申し込み限定。対象サービスとの同時申込が条件です。キャッシュバック適用後の実質月額で、受け取りには条件があります。">
@@ -75,25 +76,29 @@
         </div>
       </div>
       <div class="hero-links"><a href="#campaign-details" data-open-details="campaign-details">キャンペーン内容・適用条件 <span aria-hidden="true">＋</span></a><a href="#inquiry" data-select-area>提供エリアを確認する <span aria-hidden="true">→</span></a></div>
+      <div class="hero-service-summary" id="service-overview">
+        <h1 id="hero-heading"><span class="service-target">法人・店舗向け</span><span class="service-name"><em>10ギガ</em>光回線</span></h1>
+        <p>おしごと光10Gは、法人・個人事業主の店舗やオフィス向けの光回線です。新規導入・乗り換えをご案内します。</p>
+      </div>
     </section>
 
     <div id="content">
 
 
       <section class="body-section comparison-content" id="about" aria-labelledby="about-heading">
-        <div class="body-inner content-split"><div class="body-copy"><h2 id="about-heading"><em>10G</em>って、なにが違う？</h2><p>データの通り道が広がり、<br>複数の通信に余裕を。</p></div>
-        <figure class="content-figure comparison-figure"><div class="media-crop " style="aspect-ratio:949/961"><img src="media-original-01-comparison.png" width="1043" height="1508" alt="従来の光回線と10G回線のデータの通り道を比較したイメージ" style="width:109.905163%;left:-4.952582%;top:-32.986472%" loading="lazy"></div><figcaption>※図はイメージです。通信速度は技術規格上の最大値であり、実効速度は利用環境により変動します。</figcaption></figure></div>
+        <div class="body-inner content-split"><div class="body-copy"><h2 id="about-heading"><em class="heading-phrase">10G</em><span class="heading-phrase">って、なにが違う？</span></h2><p>データの通り道が広がり、<br>複数の通信に余裕を。</p></div>
+        <figure class="content-figure comparison-figure"><div class="media-crop " style="aspect-ratio:949/961"><img src="media-original-01-comparison.png" width="1043" height="1508" alt="従来の光回線と10G回線のデータの通り道を比較したイメージ" style="width:109.905163%;left:-4.952582%;top:-32.986472%" loading="lazy"></div><figcaption>※図はイメージです。通信速度は技術規格上の最大値であり、実効速度は利用環境により変動します。</figcaption></figure>
+        <p class="comparison-followup"><span class="copy-line">Web会議やクラウドサービスなど、</span><span class="copy-line">複数端末を使う仕事の通信環境に。</span></p></div>
       </section>
 
-      <section class="devices-image-section" id="devices" aria-labelledby="devices-heading">
-        <h2 class="sr-only" id="devices-heading">お仕事で使う端末を、まとめて１０Gへ</h2>
-        <p class="sr-only">仕事に欠かせない通信を、おしごと光10Gで。</p>
-        <img class="devices-business-image" src="media-devices-business-20261014.png" width="1024" height="1536" loading="lazy" alt="お会計にはPOSレジ・キャッシュレス決済、店舗の運営には予約・注文端末・防犯カメラ、お客様用Wi-Fiと業務用のパソコン・スマホ。仕事の端末をまとめて10Gへ。">
-        <p class="sr-only">※接続のイメージです。対応機器・ネットワーク環境の整備が必要です。</p>
+      <section class="body-section devices-image-section" id="devices" aria-labelledby="devices-heading">
+        <div class="body-inner"><h2 id="devices-heading"><span class="heading-line">お仕事で使う端末を、</span><span class="heading-line">まとめて<em>10G</em>へ</span></h2><p class="section-text-lead"><span class="copy-line"><span class="heading-phrase">POSレジ・決済端末から、</span><span class="heading-phrase">お客様用Wi-Fiまで。</span></span><span class="copy-line">仕事の通信をまとめて支えます。</span></p></div>
+        <figure class="devices-native-figure"><div class="devices-artwork"><img class="devices-business-image" src="media-devices-business-20261014.png" width="1024" height="1536" loading="lazy" alt="お会計にはPOSレジ・キャッシュレス決済、店舗の運営には予約・注文端末・防犯カメラ、お客様用Wi-Fiと業務用のパソコン・スマホの利用イメージ。"></div><figcaption class="content-note">※接続のイメージです。対応機器・ネットワーク環境の整備が必要です。</figcaption></figure>
       </section>
 
       <section class="body-section scenes-content" id="scenes" aria-labelledby="scenes-heading"><div class="body-inner">
-        <h2 id="scenes-heading">さまざまな仕事の現場で。</h2>
+        <h2 id="scenes-heading"><span class="heading-phrase">さまざまな</span><span class="heading-phrase">仕事の現場で。</span></h2>
+        <p class="section-text-lead"><span class="copy-line"><span class="heading-phrase">お店の決済・予約管理から、</span><span class="heading-phrase">オフィスのWeb会議まで。</span></span><span class="copy-line">用途に合わせて導入をご案内します。</span></p>
         <ul class="usecase-grid"><li><div class="photo-frame"><div class="media-crop " style="aspect-ratio:399/322"><img src="media-original-03-usecases.png" width="888" height="1772" alt="飲食店での利用イメージ" style="width:222.556391%;left:-8.270677%;top:-109.937888%" loading="lazy"></div></div><h3>飲食店</h3></li><li><div class="photo-frame"><div class="media-crop " style="aspect-ratio:399/322"><img src="media-original-03-usecases.png" width="888" height="1772" alt="小売店での利用イメージ" style="width:222.556391%;left:-114.536341%;top:-109.937888%" loading="lazy"></div></div><h3>小売店</h3></li><li><div class="photo-frame"><div class="media-crop " style="aspect-ratio:399/318"><img src="media-original-03-usecases.png" width="888" height="1772" alt="理美容での利用イメージ" style="width:222.556391%;left:-8.270677%;top:-252.830189%" loading="lazy"></div></div><h3>理美容</h3></li><li><div class="photo-frame"><div class="media-crop " style="aspect-ratio:399/302"><img src="media-original-03-usecases.png" width="888" height="1772" alt="民泊・ホテルでの利用イメージ" style="width:222.556391%;left:-114.536341%;top:-266.225166%" loading="lazy"></div></div><h3>民泊・ホテル</h3></li><li><div class="photo-frame"><div class="media-crop " style="aspect-ratio:399/318"><img src="media-original-03-usecases.png" width="888" height="1772" alt="土木・建設での利用イメージ" style="width:222.556391%;left:-8.270677%;top:-394.025157%" loading="lazy"></div></div><h3>土木・建設</h3></li><li><div class="photo-frame"><div class="media-crop " style="aspect-ratio:399/318"><img src="media-original-03-usecases.png" width="888" height="1772" alt="小規模オフィスでの利用イメージ" style="width:222.556391%;left:-114.536341%;top:-394.025157%" loading="lazy"></div></div><h3>小規模オフィス</h3></li></ul><p class="content-note">写真は利用イメージです。</p>
       </div></section>
 
@@ -110,80 +115,102 @@
           <dl class="campaign-table"><div><dt>料金相当額のキャッシュバック</dt><dd>3,900円 × 12ヶ月<br><strong>46,800円</strong></dd></div><div><dt>工事費用</dt><dd><strong>23,980円</strong></dd></div><div class="total-row"><dt>上記金額の合計</dt><dd><strong>70,780円</strong></dd></div><div><dt>お申し込み期限</dt><dd>10月31日まで</dd></div></dl>
           <h3>適用条件</h3><ul class="conditions-list"><li><strong>WiFiとの同時お申し込みが条件です。</strong></li><li>キャッシュバック適用後の実質月額です。</li><li>キャッシュバックの受け取りには条件がございます。</li></ul><p class="fine">WiFiのお申し込み内容・料金、キャッシュバックの受取条件や方法は、お問い合わせ時にご案内します。</p><a class="text-link" href="#inquiry">条件について問い合わせる <span aria-hidden="true">→</span></a>
         </div></details>
-        <a class="button primary campaign-action" href="#inquiry"><span>キャンペーンを相談する</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="button primary campaign-action" href="#inquiry"><span>キャンペーンのお問い合わせ</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div></section>
 
       <section class="body-section quality-content" id="quality" aria-labelledby="quality-heading"><div class="body-inner">
-        <h2 id="quality-heading">仕事を支える回線品質</h2><ul class="quality-rows"><li><div class="quality-art"><div class="media-crop " style="aspect-ratio:251/165" aria-hidden="true"><img src="media-original-05-quality.png" width="1159" height="1358" alt="" style="width:461.752988%;left:-41.832669%;top:-315.151515%" loading="lazy"></div></div><div><h3>フレッツ光クロス回線</h3><p>高速・大容量の光回線を利用。</p></div></li><li><div class="quality-art"><div class="media-crop " style="aspect-ratio:205/153" aria-hidden="true"><img src="media-original-05-quality.png" width="1159" height="1358" alt="" style="width:565.365854%;left:-65.365854%;top:-499.346405%" loading="lazy"></div></div><div><h3>最大概ね <em>10Gbps</em></h3><p>Web会議や大容量データにも。</p></div></li><li><div class="quality-art"><div class="media-crop " style="aspect-ratio:169/190" aria-hidden="true"><img src="media-original-05-quality.png" width="1159" height="1358" alt="" style="width:685.798817%;left:-88.165680%;top:-528.421053%" loading="lazy"></div></div><div><h3>7時〜22時・365日保守</h3><p>回線のトラブルに対応。</p></div></li></ul>
+        <h2 id="quality-heading">仕事を支える回線品質</h2><p class="section-text-lead"><span class="copy-line"><span class="heading-phrase">Web会議やクラウドサービス、</span><span class="heading-phrase">大容量データの送受信など、</span></span><span class="copy-line">日々の仕事の通信を支えます。</span></p><ul class="quality-rows"><li><div class="quality-art"><div class="media-crop " style="aspect-ratio:251/165" aria-hidden="true"><img src="media-original-05-quality.png" width="1159" height="1358" alt="" style="width:461.752988%;left:-41.832669%;top:-315.151515%" loading="lazy"></div></div><div><h3>フレッツ光クロス回線</h3><p>高速・大容量の光回線を利用。</p></div></li><li><div class="quality-art"><div class="media-crop " style="aspect-ratio:205/153" aria-hidden="true"><img src="media-original-05-quality.png" width="1159" height="1358" alt="" style="width:565.365854%;left:-65.365854%;top:-499.346405%" loading="lazy"></div></div><div><h3>最大概ね <em>10Gbps</em></h3><p>Web会議や大容量データにも。</p></div></li><li><div class="quality-art"><div class="media-crop " style="aspect-ratio:169/190" aria-hidden="true"><img src="media-original-05-quality.png" width="1159" height="1358" alt="" style="width:685.798817%;left:-88.165680%;top:-528.421053%" loading="lazy"></div></div><div><h3>7時〜22時・365日保守</h3><p>回線のトラブルに対応。</p></div></li></ul>
         <p class="content-note">※10Gbpsは技術規格上の最大値です。実効速度は端末、配線、利用環境、混雑状況などにより変動します。保守時間は回線保守の時間です。</p>
       </div></section>
 
       <section class="body-section flow-content" id="flow" aria-labelledby="flow-heading"><div class="body-inner">
-        <h2 id="flow-heading">導入の流れ</h2><ol class="steps-content"><li><span class="flow-number">1</span><div class="step-copy"><h3>提供エリア確認</h3><p>導入先の住所・建物を確認。</p></div><div class="step-art"><div class="media-crop " style="aspect-ratio:199/185" aria-hidden="true"><img src="media-original-06-flow.png" width="1024" height="1536" alt="" style="width:514.572864%;left:-370.351759%;top:-296.756757%" loading="lazy"></div></div></li><li><span class="flow-number">2</span><div class="step-copy"><h3>担当者からご案内</h3><p>料金・条件・工事内容を確認。</p></div><div class="step-art"><div class="media-crop " style="aspect-ratio:205/205" aria-hidden="true"><img src="media-original-06-flow.png" width="1024" height="1536" alt="" style="width:499.512195%;left:-368.292683%;top:-416.585366%" loading="lazy"></div></div></li><li><span class="flow-number">3</span><div class="step-copy"><h3>工事・ご利用開始</h3><p>日程を調整し、開通へ。</p></div><div class="step-art"><div class="media-crop " style="aspect-ratio:199/194" aria-hidden="true"><img src="media-original-06-flow.png" width="1024" height="1536" alt="" style="width:514.572864%;left:-375.376884%;top:-608.762887%" loading="lazy"></div></div></li></ol>
+        <h2 id="flow-heading">導入の流れ</h2><p class="section-text-lead"><span class="copy-line"><span class="heading-phrase">新規導入・乗り換えともに、</span><span class="heading-phrase">導入先の住所をお知らせください。</span></span><span class="copy-line"><span class="heading-phrase">提供可否や工事内容を確認し、</span><span class="heading-phrase">料金・条件をご案内します。</span></span></p><ol class="steps-content"><li><span class="flow-number">1</span><div class="step-copy"><h3>提供エリア確認</h3><p>導入先の住所・建物を確認。</p></div><div class="step-art"><div class="media-crop " style="aspect-ratio:199/185" aria-hidden="true"><img src="media-original-06-flow.png" width="1024" height="1536" alt="" style="width:514.572864%;left:-370.351759%;top:-296.756757%" loading="lazy"></div></div></li><li><span class="flow-number">2</span><div class="step-copy"><h3>担当者からご案内</h3><p>料金・条件・工事内容を確認。</p></div><div class="step-art"><div class="media-crop " style="aspect-ratio:205/205" aria-hidden="true"><img src="media-original-06-flow.png" width="1024" height="1536" alt="" style="width:499.512195%;left:-368.292683%;top:-416.585366%" loading="lazy"></div></div></li><li><span class="flow-number">3</span><div class="step-copy"><h3>工事・ご利用開始</h3><p>日程を調整し、開通へ。</p></div><div class="step-art"><div class="media-crop " style="aspect-ratio:199/194" aria-hidden="true"><img src="media-original-06-flow.png" width="1024" height="1536" alt="" style="width:514.572864%;left:-375.376884%;top:-608.762887%" loading="lazy"></div></div></li></ol>
         <a class="text-link flow-area-link" href="#inquiry" data-select-area>提供エリアを確認する <span aria-hidden="true">→</span></a>
       </div></section>
 
-      <section class="section faq-section" id="faq" aria-labelledby="faq-heading"><div class="narrow"><div class="section-heading"><p class="eyebrow">導入前の疑問にお答えします</p><h2 id="faq-heading">よくある質問</h2><p>店舗・オフィスの利用から、乗り換え・提供エリアまで。</p></div>
+      <section class="section faq-section" id="faq" aria-labelledby="faq-heading"><div class="narrow"><div class="section-heading"><p class="eyebrow">導入前の疑問にお答えします</p><h2 id="faq-heading">よくある質問</h2><p><span class="copy-line">店舗・オフィスの利用から、</span><span class="copy-line">乗り換え・提供エリアまで。</span></p></div>
         <details class="accordion" id="faq-conditions">
           <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>ワンコインキャンペーンの適用条件はありますか？</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="accordion-body"><p>12ヶ月間実質月額500円（税抜）のキャンペーンは、WiFiとの同時お申し込みが条件です。キャッシュバック適用後の金額で、受け取りには条件があります。お申し込み期限は10月31日までです。詳細はお問い合わせ時にご案内します。</p><a class="text-link" href="#inquiry">キャンペーンについて問い合わせる <span aria-hidden="true">→</span></a></div>
+          <div class="accordion-body"><p>12ヶ月間実質月額500円（税抜）のキャンペーンは、WiFiとの同時お申し込みが条件です。キャッシュバック適用後の金額で、受け取りには条件があります。お申し込み期限は10月31日までで、詳しい適用条件や受取方法は担当者がご案内します。</p><a class="text-link" href="#campaign-details" data-open-details="campaign-details">キャンペーンの条件を確認する <span aria-hidden="true">→</span></a></div>
         </details>
         <details class="accordion" id="faq-area">
           <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>光回線の提供エリアを確認できますか？</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="accordion-body"><p>導入予定の住所をフォームでお知らせください。担当者が住所や建物設備を確認し、おしごと光10Gの提供可否をご案内します。</p><a class="text-link" href="#inquiry" data-select-area>提供エリアを確認する <span aria-hidden="true">→</span></a></div>
+          <div class="accordion-body"><p>店舗やオフィスなど、導入予定の住所をお知らせください。担当者が住所や建物設備を確認し、おしごと光10Gの提供可否をご案内します。お電話または提供エリア確認フォームで受け付けています。</p><a class="text-link" href="#inquiry" data-select-area>提供エリアを確認する <span aria-hidden="true">→</span></a></div>
         </details>
         <details class="accordion" id="faq-switching">
           <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>現在使っている光回線から乗り換えられますか？</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="accordion-body"><p>現在のご契約内容や導入先の設備を確認してご案内します。フォームのご相談内容欄に、ご利用中の回線と乗り換えのご希望をご記入ください。現在の回線の解約時期や費用も、お申し込み前にご確認ください。</p></div>
+          <div class="accordion-body"><p>現在のご契約内容や導入先の設備を確認し、乗り換えについてご案内します。ご利用中の回線名と乗り換えのご希望をお知らせください。現在の回線の解約時期や費用は、ご契約先にもご確認ください。</p></div>
         </details>
         <details class="accordion" id="faq-business">
           <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>法人・個人事業主・店舗でも申し込めますか？</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="accordion-body"><p>おしごと光10Gは、法人・個人事業主・店舗向けの光回線です。オフィスや飲食店、小売店、美容室など、お仕事で使うインターネット回線の導入をご相談いただけます。</p></div>
+          <div class="accordion-body"><p>おしごと光10Gは、法人・個人事業主・店舗向けの光回線です。オフィスや飲食店、小売店、美容室など、お仕事で使うインターネット回線の新規導入・乗り換えをご相談いただけます。</p></div>
         </details>
         <details class="faq-more" id="faq-more">
-          <summary><span class="faq-more-label"><span class="faq-more-open">その他の質問を見る<span class="faq-more-count">（9問）</span></span><span class="faq-more-close">その他の質問を閉じる</span></span><span class="plus" aria-hidden="true"></span></summary>
+          <summary><span class="faq-more-label"><span class="faq-more-open">その他の質問を見る<span class="faq-more-count">（12問）</span></span><span class="faq-more-close">その他の質問を閉じる</span></span><span class="plus" aria-hidden="true"></span></summary>
           <div class="faq-more-body">
+            <h3 class="faq-topic-heading">回線・速度・接続機器</h3>
             <details class="accordion" id="faq-service">
               <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>おしごと光10Gは、どのような回線ですか？</span><span class="plus" aria-hidden="true"></span></summary>
-              <div class="accordion-body"><p>フレッツ光クロス回線を利用した、最大概ね10Gbpsの光回線です。Web会議やクラウドサービスなど、仕事で使うインターネット環境にご利用いただけます。実際の通信速度は、ご利用の機器や環境によって変動します。</p><a class="text-link" href="#quality">回線品質について見る <span aria-hidden="true">→</span></a></div>
+              <div class="accordion-body"><p>フレッツ光クロス回線を利用した、最大概ね10Gbpsの光回線です。Web会議、クラウドサービス、大容量データの送受信など、仕事で使うインターネット環境にご利用いただけます。実際の通信速度は、ご利用の機器や環境によって変動します。</p><a class="text-link" href="#quality">回線品質について見る <span aria-hidden="true">→</span></a></div>
+            </details>
+            <details class="accordion" id="faq-1g-10g">
+              <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>1ギガの光回線と10ギガの光回線は、何が違いますか？</span><span class="plus" aria-hidden="true"></span></summary>
+              <div class="accordion-body"><p>通信規格上の最大速度が異なり、10ギガ回線はより多くのデータを送受信できる規格です。複数端末の利用や大容量データのやり取りを行う店舗・オフィスでの選択肢になります。実際の速度は、接続する機器や利用環境によって異なります。</p></div>
             </details>
             <details class="accordion" id="faq-usage">
               <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>POSレジやお客様用Wi-Fiにも使えますか？</span><span class="plus" aria-hidden="true"></span></summary>
-              <div class="accordion-body"><p>POSレジ、キャッシュレス決済、予約管理、防犯カメラ、業務用のパソコンやスマホ、お客様用Wi-Fiなど、店舗・オフィスのさまざまな通信にご利用いただけます。ご利用には対応機器やネットワーク環境の整備が必要です。</p><a class="text-link" href="#devices">お仕事での利用イメージを見る <span aria-hidden="true">→</span></a></div>
+              <div class="accordion-body"><p>POSレジ、キャッシュレス決済、予約・注文端末、防犯カメラ、業務用のパソコン・スマホ、お客様用Wi-Fiなどでの利用を想定しています。接続する機器に応じた設定やネットワーク環境の整備が必要です。現在の利用機器や用途をお知らせいただければ、導入についてご案内します。</p><a class="text-link" href="#devices">お仕事での利用イメージを見る <span aria-hidden="true">→</span></a></div>
             </details>
             <details class="accordion" id="faq-speed">
               <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>必ず10Gbpsの速度が出ますか？</span><span class="plus" aria-hidden="true"></span></summary>
-              <div class="accordion-body"><p>10Gbpsは技術規格上の最大値であり、実際の通信速度を保証するものではありません。端末、配線、接続機器、利用環境や混雑状況などによって実効速度は変動する、ベストエフォート型のサービスです。</p></div>
+              <div class="accordion-body"><p>10Gbpsは技術規格上の最大値で、実際の通信速度を保証するものではありません。端末、配線、接続機器、利用環境や混雑状況によって速度が変動する、ベストエフォート型のサービスです。</p></div>
             </details>
             <details class="accordion" id="faq-equipment">
-              <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>10ギガ対応のルーターやLANケーブルは必要ですか？</span><span class="plus" aria-hidden="true"></span></summary>
-              <div class="accordion-body"><p>10ギガの性能を活かすには、対応するルーター、LANケーブル、端末が必要です。現在お使いの機器も含めてご相談ください。</p></div>
+              <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>今のルーターやLANケーブルを、そのまま使えますか？</span><span class="plus" aria-hidden="true"></span></summary>
+              <div class="accordion-body"><p>10ギガの性能を活かすには、対応するルーター、LANケーブル、端末などの接続環境が必要です。現在の機器で利用できるかは、機種や接続方法によって異なります。機器の型番や利用状況も含めてお問い合わせください。</p></div>
             </details>
+            <h3 class="faq-topic-heading">料金・キャンペーン</h3>
+            <details class="accordion" id="faq-effective-price">
+              <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>「実質月額500円」は、毎月の請求額ですか？</span><span class="plus" aria-hidden="true"></span></summary>
+              <div class="accordion-body"><p>表示の実質月額500円（税抜）は、12ヶ月間のキャッシュバック適用後の金額で、毎月のご請求額そのものを示すものではありません。WiFiとの同時お申し込みが条件で、キャッシュバックの受け取りにも条件があります。お申し込み内容や受取方法は、担当者がご案内します。</p></div>
+            </details>
+            <h3 class="faq-topic-heading">導入・工事の確認</h3>
             <details class="accordion" id="faq-branches">
               <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>複数の店舗や事業所への導入も相談できますか？</span><span class="plus" aria-hidden="true"></span></summary>
-              <div class="accordion-body"><p>複数拠点の導入もご相談いただけます。各拠点の住所や建物設備を確認してご案内しますので、店舗数・拠点数をフォームでお知らせください。</p></div>
+              <div class="accordion-body"><p>複数拠点の光回線導入もご相談いただけます。提供可否は拠点ごとの住所や建物設備を確認してご案内しますので、店舗数・拠点数と導入先をお知らせください。</p></div>
             </details>
             <details class="accordion" id="faq-opening">
               <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>新店舗の開業やオフィス移転でも相談できますか？</span><span class="plus" aria-hidden="true"></span></summary>
-              <div class="accordion-body"><p>開業・移転に伴う光回線の導入もご相談いただけます。導入予定の住所や利用開始の希望時期をお知らせください。提供可否や工事内容を確認してご案内します。</p></div>
+              <div class="accordion-body"><p>新規開業や移転に伴うインターネット回線の導入もご相談いただけます。導入予定の住所と、利用開始の希望時期をお知らせください。提供可否や工事内容を確認してご案内します。</p></div>
             </details>
             <details class="accordion" id="faq-installation">
               <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>申し込みから開通までは、どのように進みますか？</span><span class="plus" aria-hidden="true"></span></summary>
-              <div class="accordion-body"><p>提供エリアの確認後、担当者から料金・適用条件・工事内容をご案内し、工事日程を調整します。工事の要否や開通までの期間は、ご契約内容や建物設備などにより異なります。利用開始の希望日がある場合は、お問い合わせ時にお知らせください。</p><a class="text-link" href="#flow">導入の流れを見る <span aria-hidden="true">→</span></a></div>
+              <div class="accordion-body"><p>提供エリアを確認した後、担当者から料金・適用条件・工事内容をご案内し、工事日程を調整します。開通までの期間は、ご契約内容や建物設備などによって異なります。利用開始の希望日がある場合は、お問い合わせ時にお知らせください。</p><a class="text-link" href="#flow">導入の流れを見る <span aria-hidden="true">→</span></a></div>
             </details>
             <details class="accordion" id="faq-construction">
               <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>開通工事は必要ですか？</span><span class="plus" aria-hidden="true"></span></summary>
-              <div class="accordion-body"><p>工事の要否や内容は、現在のご契約や建物設備などによって異なります。導入先の状況を確認し、お申し込み前に担当者からご案内します。</p></div>
+              <div class="accordion-body"><p>工事の要否や内容は、現在のご契約や建物設備などによって異なります。導入先の住所や現在の回線状況を確認し、お申し込み前に担当者からご案内します。</p></div>
             </details>
             <details class="accordion" id="faq-preparation">
-              <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>相談するときに、何を伝えればよいですか？</span><span class="plus" aria-hidden="true"></span></summary>
-              <div class="accordion-body"><p>導入予定の住所、ご利用中の回線、利用開始の希望時期、お仕事での利用用途をお知らせください。複数拠点の場合は、拠点数もご記入いただくとご案内がスムーズです。</p></div>
+              <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>問い合わせるときに、何を伝えればよいですか？</span><span class="plus" aria-hidden="true"></span></summary>
+              <div class="accordion-body"><p>導入予定の住所、ご利用中の回線、利用開始の希望時期、お仕事での利用用途をお知らせください。複数拠点への導入や、POSレジ・Wi-Fiなど接続したい機器がある場合も、あわせてお伝えいただくとご案内がスムーズです。</p></div>
+            </details>
+            <h3 class="faq-topic-heading">お電話での確認</h3>
+            <details class="accordion" id="faq-phone">
+              <summary><img class="faq-q" src="media-original-faq-q.webp" alt="" aria-hidden="true"><span>料金や見積もりを、電話で確認できますか？</span><span class="plus" aria-hidden="true"></span></summary>
+              <div class="accordion-body"><p>キャンペーンの適用条件や導入に関するお問い合わせは、お電話でも受け付けています。導入先の住所やご利用用途をお伝えいただき、料金・見積もりについて確認したい旨をお知らせください。</p><a class="text-link" href="tel:05017802661" data-cta-location="faq-phone">電話で聞いてみる <span aria-hidden="true">→</span></a></div>
             </details>
           </div>
         </details>
       </div></section>
       <section class="section inquiry-section" id="inquiry" aria-labelledby="inquiry-heading"><div class="narrow">
-        <div class="section-heading"><p class="eyebrow">お申し込み・提供エリア確認</p><h2 id="inquiry-heading">お問い合わせ</h2><p>キャンペーンやご利用場所について、担当者がご案内します。</p></div>
+        <div class="section-heading"><p class="eyebrow">お申し込み・提供エリア確認</p><h2 id="inquiry-heading">お問い合わせ</h2><p class="inquiry-intro"><span>キャンペーンやご利用場所について、</span><span>担当者がご案内します。</span></p></div>
+        <div class="phone-contact" role="group" aria-label="お電話でのご相談">
+          <p class="phone-contact-intro">提供エリア・料金は、お電話でも。</p>
+          <a class="phone-contact-action" href="tel:05017802661" data-cta-location="inquiry-phone-card"><span class="phone-contact-label"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>電話で聞いてみる</span><strong>050-1780-2661</strong></a>
+          <p class="phone-contact-note">導入先の住所をお伝えいただくとスムーズです。</p>
+        </div>
+        <p class="form-contact-heading"><span>フォームでのご相談はこちら</span></p>
         <form id="lead-form" class="lead-form" data-webhook="https://hooks.zapier.com/hooks/catch/12525485/4hcni68/">
           <fieldset class="inquiry-type"><legend>ご相談の内容</legend><label><input type="radio" name="inquiryType" value="consultation" checked><span>キャンペーンのご相談</span></label><label><input type="radio" name="inquiryType" value="area"><span>提供エリアの確認</span></label></fieldset>
           <fieldset class="address-fields" id="address-fields" hidden disabled><legend>導入先のご住所</legend><div class="form-row"><label for="postal-code">郵便番号 <span class="required">必須</span><input id="postal-code" name="postalCode" autocomplete="postal-code" inputmode="numeric" placeholder="例）123-4567" pattern="[0-9]{3}-?[0-9]{4}" required></label><label for="prefecture">都道府県 <span class="required">必須</span><select id="prefecture" name="prefecture" autocomplete="address-level1" required><option value="">選択してください</option></select></label></div><label for="city">市区町村 <span class="required">必須</span><input id="city" name="city" autocomplete="address-level2" placeholder="例）新宿区" required></label><label for="street">町名・番地・建物名 <span class="required">必須</span><input id="street" name="street" autocomplete="address-line1" placeholder="例）西新宿1-1-1 〇〇ビル2F" required></label><p class="fine">提供可否は担当者が住所と建物設備を確認してご案内します。</p></fieldset>
@@ -196,7 +223,6 @@
           <button type="submit" class="button primary submit-button"><span id="submit-label">お問い合わせを送信する</span><svg class="icon"><use href="#i-arrow"/></svg></button>
         </form>
         <div class="form-complete" hidden tabindex="-1"><span class="complete-mark"><svg class="icon"><use href="#i-check"/></svg></span><h3>お問い合わせを送信しました。</h3><p>担当者からの連絡をお待ちください。<br>お急ぎの場合は、お電話でお問い合わせください。</p><button type="button" class="text-link" id="reset-form">続けてお問い合わせする <span aria-hidden="true">→</span></button></div>
-        <div class="phone-contact"><p>お電話でのお問い合わせ</p><a href="tel:05017802661" data-cta-location="inquiry"><svg class="icon"><use href="#i-phone"/></svg>050-1780-2661</a></div>
       </div></section>
     </div>
   </main>
@@ -213,15 +239,14 @@
       <a href="#flow">導入の流れ<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       <a href="#faq">よくある質問<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </nav>
-    <a class="rail-cta primary" href="#inquiry">お問い合わせ<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-    <a class="rail-cta rail-cta-secondary" href="#inquiry" data-select-area><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>提供エリアを確認する</a>
     <div class="rail-phone">
-      <p>お電話でのお問い合わせ</p>
-      <a href="tel:05017802661" data-cta-location="desktop-rail"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>050-1780-2661</a>
+      <p>提供エリア・料金のご相談</p>
+      <a class="rail-phone-action" href="tel:05017802661" data-cta-location="desktop-rail"><span class="rail-phone-label"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>電話で聞いてみる</span><strong>050-1780-2661</strong></a>
     </div>
+    <a class="rail-cta primary" href="#inquiry">Webでお問い合わせ<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </div>
 </aside>
   </div>
-  <div class="mobile-sticky" hidden><a href="#inquiry" data-select-area><svg class="icon"><use href="#i-pin"/></svg>提供エリア確認</a><a href="#inquiry" class="sticky-primary">お問い合わせ <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+  <nav class="mobile-sticky" aria-label="電話・フォームでのご相談" hidden><a class="sticky-phone" href="tel:05017802661" data-cta-location="mobile-sticky"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span><strong>電話で聞いてみる</strong><small>050-1780-2661</small></span></a><a href="#inquiry" class="sticky-primary"><span><strong>お問い合わせ</strong><small>Webフォームへ</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></nav>
 </body>
 </html>
