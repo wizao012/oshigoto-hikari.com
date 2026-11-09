@@ -35,7 +35,6 @@
     target.scrollIntoView({behavior:'smooth', block:'start'});
     window.history.replaceState(null, '', window.location.pathname + window.location.search + fragment);
   }));
-  document.querySelectorAll('a[href^="tel:"]').forEach(link => link.addEventListener('click', () => track('click_to_call', { phone_number:'050-1780-2661', cta_location:link.dataset.ctaLocation || 'unknown' })));
   let heroPast = false; let phoneCardVisible = false;
   const updateSticky = () => { sticky.hidden = !heroPast || phoneCardVisible; };
   if ('IntersectionObserver' in window) {
