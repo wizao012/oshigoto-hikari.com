@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/* The artwork owns the price treatment. Dates, conditions and actions remain HTML. */
+[data-campaign-route="nationwide"] .nationwide-offer-art {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+[data-campaign-route="nationwide"] .nationwide-offer-art > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+[data-campaign-route="nationwide"] .hero-ad-style .hero-offer {
+  margin: -4px 17px 0;
+  padding: 0 0 2px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+[data-campaign-route="nationwide"] .hero-ad-style .hero-offer .deadline {
+  margin-top: 13px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+[data-campaign-route="nationwide"] .hero-ad-style .hero-offer .cta {
+  margin-top: 14px;
+}
+
+[data-campaign-route="nationwide"] .hero-ad-style .hero-offer .small-note {
+  margin-top: 12px;
+}
+
+[data-campaign-route="nationwide"] .nationwide-offer-art--campaign + .deadline {
+  margin-top: 18px;
+}
+
+[data-campaign-route="nationwide"] .left-rail .nationwide-offer-art--rail {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+[data-campaign-route="nationwide"] .left-rail .nationwide-offer-art--rail > img {
+  border-radius: 9px;
+}
+
+@media (min-width: 480px) {
+  [data-campaign-route="nationwide"] .hero-ad-style .hero-offer {
+    margin-inline: 29px;
+  }
+
+  [data-campaign-route="nationwide"] .nationwide-offer-art > img {
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 359px) {
+  [data-campaign-route="nationwide"] .hero-ad-style .hero-offer {
+    margin-inline: 13px;
+  }
+
+  [data-campaign-route="nationwide"] .hero-ad-style .hero-offer .deadline {
+    margin-top: 11px;
+  }
+
+  [data-campaign-route="nationwide"] .hero-ad-style .hero-offer .cta {
+    margin-top: 12px;
+  }
+}
