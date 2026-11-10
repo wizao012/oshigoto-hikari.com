@@ -1,0 +1,52 @@
+/* The existing business LP is revealed after the purpose selection. */
+.audience-dialog{box-sizing:border-box;width:min(560px,calc(100% - 32px));max-height:calc(100svh - 36px);overflow:auto;margin:auto;padding:30px 32px 32px;border:0;border-radius:22px;background:#fff;color:#00265d;box-shadow:0 24px 90px #0a234440;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+.audience-dialog::backdrop{background:#15304f85;backdrop-filter:blur(4px)}
+.audience-dialog .audience-brand{display:flex;justify-content:center;padding-bottom:22px;border-bottom:1px solid #e7edf4;margin-bottom:24px}
+.audience-brand img{display:block;width:174px;height:auto}
+.audience-dialog .audience-eyebrow{margin:0 0 9px;text-align:center;font-size:12px;font-weight:700;letter-spacing:.06em;color:#627a94}
+.audience-dialog h2{margin:0;padding:0;color:#00265d;font-size:28px;line-height:1.55;letter-spacing:-.035em;font-weight:800;text-align:center}
+.audience-dialog h2:focus{outline:none}
+.audience-dialog .audience-description{margin:14px 0 24px;color:#687d94;font-size:13px;line-height:1.8;text-align:center}
+.audience-choices{display:grid;gap:13px}
+.audience-dialog .audience-choice{display:flex;align-items:center;gap:16px;width:100%;min-height:100px;padding:20px 17px;border:1px solid #bfd4eb;border-radius:13px;background:#f3f8ff;color:#00265d;text-align:left;cursor:pointer;transition:border-color .15s,background .15s}
+.audience-choice:hover,.audience-choice:focus-visible{border-color:#0877ec;background:#eaf4ff}
+.audience-choice-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#e0efff;color:#0877ec;flex:none}
+.audience-choice-icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.audience-choice-copy{display:block;flex:1;min-width:0}
+.audience-choice-copy strong{display:block;font-size:18px;font-weight:800;line-height:1.5;letter-spacing:-.035em}
+.audience-choice-copy small{display:block;margin-top:5px;font-size:11px;line-height:1.7;color:#6b7d90;letter-spacing:0}
+.audience-choice-copy small>span{display:inline-block}
+.audience-arrow{width:19px;height:19px;flex:none;fill:none;stroke:#0877ec;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.audience-dialog .audience-choice-personal{background:#fffdf4;border-color:#e7dcbb}
+.audience-choice-personal .audience-choice-icon{background:#fff0bc;color:#ac7d16}
+.audience-choice-personal .audience-arrow{stroke:#ac7d16}
+.audience-choice-personal:hover,.audience-choice-personal:focus-visible{background:#fff9e4;border-color:#d4ad43}
+.audience-dialog .audience-back{display:flex;align-items:center;gap:5px;border:0;margin:0 0 17px;padding:0;background:transparent;color:#6b7d90;font-size:12px;font-weight:600;cursor:pointer}
+.audience-back span{font-size:24px;line-height:1}
+.audience-dialog [data-audience-step="personal"] h2{font-size:25px}
+.audience-campaigns{display:grid;gap:13px;margin-top:22px}
+.audience-dialog .audience-campaign{display:block;width:100%;padding:0;overflow:hidden;border:1px solid #ebcf9d;border-radius:13px;background:#fffbf1;color:#a5680b;text-decoration:none;text-align:left;font-family:inherit;cursor:pointer;transition:border-color .15s,background .15s}
+.audience-region-main{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:126px;padding:21px 22px}
+.audience-region-copy{display:block;min-width:0}
+.audience-region-heading{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px}
+.audience-region{display:block;font-size:32px;font-weight:800;line-height:1.35;letter-spacing:-.035em;white-space:nowrap}
+.audience-region-badge{display:inline-block;flex:none;padding:3px 6px;border-radius:4px;background:#ffdfa0;color:#8e5a0c;font-size:10px;font-weight:800;line-height:1.5;white-space:nowrap}
+.audience-region-description{display:block;margin-top:6px;color:#826f50;font-size:13px;font-weight:600;line-height:1.7}
+.audience-region-description>span{display:inline-block}
+.audience-region-arrow{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:#ca7d0d;color:#fff;font-size:24px;font-weight:500;line-height:1}
+.audience-campaign-action{display:flex;justify-content:center;align-items:center;width:100%;min-height:38px;padding:8px;border-top:1px solid #f1e1bf;background:#fff4db;color:#9a650a;font-size:12px;font-weight:700;line-height:1.55}
+.audience-dialog .audience-campaign-national{border-color:#bfd4eb;background:#f1f7ff;color:#0877ec}
+.audience-campaign-national .audience-region-description{color:#58759a}
+.audience-campaign-national .audience-region-arrow{background:#0877ec}
+.audience-campaign-national .audience-campaign-action{border-color:#d9e8fa;background:#e9f3ff;color:#0877ec}
+.audience-campaign:focus-visible{outline:3px solid #0877ec;outline-offset:3px}
+.audience-campaign:hover{filter:brightness(.985)}
+.audience-dialog .audience-footnote{margin:15px 0 0;font-size:10px;line-height:1.7;text-align:center;color:#8290a1}
+.audience-dialog .audience-route-status{margin:12px 0 0;padding:9px 11px;border-radius:6px;background:#f1f6fb;color:#5f7388;font-size:11px;line-height:1.7;text-align:center}
+.hero-art .audience-reopen{position:absolute;z-index:3;top:15px;right:13px;display:inline-flex;align-items:center;gap:6px;padding:7px 9px;border:1px solid #d9e5f2;border-radius:6px;background:#ffffffed;color:#637994;font:600 10px/1.5 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;cursor:pointer}
+.audience-reopen span{font-size:14px;line-height:1}
+html.audience-modal-open{overflow:hidden}
+@media(max-width:480px){.audience-dialog{padding:25px 20px;border-radius:20px}.audience-dialog .audience-brand{padding-bottom:19px;margin-bottom:21px}.audience-dialog .audience-description{font-size:12px;margin:13px 0 21px}.audience-dialog .audience-choice{gap:12px;padding:17px 13px}.audience-choice-icon{width:44px;height:46px}.audience-arrow{width:16px;height:16px}.audience-choice-copy strong{font-size:17px;white-space:nowrap}.audience-choice-copy small{font-size:11px;line-height:1.65}}
+@media(max-width:374px){.audience-dialog{width:calc(100% - 24px);padding:23px 18px;border-radius:18px}.audience-dialog h2{font-size:25px}.audience-choice-copy strong{font-size:16px}.audience-choice-copy small{font-size:10px}.audience-dialog .audience-choice{gap:12px;padding:16px 13px;min-height:94px}.audience-choice-icon{width:40px;height:44px}.audience-dialog [data-audience-step="personal"] h2{font-size:23px}.audience-dialog .audience-brand{padding-bottom:18px;margin-bottom:18px}.audience-dialog .audience-description{font-size:12px}.audience-region-main{gap:10px;min-height:124px;padding:18px 16px}.audience-region{font-size:28px}.audience-region-heading{gap:5px 7px}.audience-region-badge{font-size:9px;padding:3px 5px}.audience-region-arrow{width:32px;height:32px;font-size:22px}.audience-region-description{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.audience-choice,.audience-campaign{transition:none}}
+@media(max-width:374px){.audience-choice-copy strong{font-size:15px}.audience-choice-icon{width:38px}.audience-choice-copy small{font-size:10px}}

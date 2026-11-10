@@ -28,12 +28,14 @@
     .kv-deadline-update b{font-family:Arial,sans-serif;font-weight:900}
     .kv-deadline-update span{font-size:.72em}
   </style>
+  <link rel="stylesheet" href="audience-modal.css?v=20261106-2">
+
+  <script src="audience-config.js?v=20261110-release1" defer></script>
+  <script src="audience-router.js?v=20261110-release1" defer></script>
   <script src="attribution.js?v=20261020-1" defer></script>
-  <script src="app.js?v=20261109-1" defer></script>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5VTFWXV6');</script>
+  <script src="app.js?v=20261110-release1" defer></script>
 </head>
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VTFWXV6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a class="skip-link" href="#content">本文へ移動する</a>
   <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
@@ -68,6 +70,7 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-inner">
         <div class="hero-art">
+          <button type="button" class="audience-reopen" data-open-audience aria-haspopup="dialog">ご利用目的を変更 <span aria-hidden="true">⌄</span></button>
           <img class="kv" src="media-hero-kv.png" width="941" height="1672" fetchpriority="high" alt="法人・店舗向け10ギガ光回線。驚きのスピードを、驚きのワンコインで。12ヶ月間、実質月額500円（税抜）。11月30日までのお申し込み限定。対象サービスとの同時申込が条件です。キャッシュバック適用後の実質月額で、受け取りには条件があります。">
           <time class="kv-deadline-update" datetime="2026-11-30" aria-hidden="true"><b>11</b><span>月</span><b>30</b><span>日</span></time>
           <a class="kv-cta" href="#inquiry" aria-label="キャンペーンについて問い合わせる"><span class="sr-only">キャンペーンについて問い合わせる</span></a>
@@ -255,5 +258,43 @@
 </aside>
   </div>
   <nav class="mobile-sticky" aria-label="電話・フォームでのご相談" hidden><a class="sticky-phone" href="tel:05017802661" data-cta-location="mobile-sticky"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span><strong>電話で聞いてみる</strong><small>050-1780-2661</small></span></a><a href="#inquiry" class="sticky-primary"><span><strong>お問い合わせ</strong><small>Webフォームへ</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></nav>
+
+  <dialog id="audience-dialog" class="audience-dialog" aria-labelledby="audience-title">
+    <div class="audience-brand"><img src="media-logo.png" width="1994" height="373" alt="おしごと光10G"></div>
+    <div data-audience-step="purpose">
+      <p class="audience-eyebrow">キャンペーンのご案内</p>
+      <h2 id="audience-title">ご利用の目的を<br>お選びください</h2>
+      <p class="audience-description">ご利用に合わせたキャンペーンをご案内します。</p>
+      <div class="audience-choices">
+        <button type="button" class="audience-choice audience-choice-business" data-audience-choice="business">
+          <span class="audience-choice-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6V4h8v2M4 7h16v13H4zM4 11c5 3 11 3 16 0M10 12v3h4v-3"/></svg></span>
+          <span class="audience-choice-copy"><strong>法人・個人事業主</strong><small><span>店舗・オフィス・</span><span>登記先のご自宅など</span></small></span>
+          <svg class="audience-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+        </button>
+        <button type="button" class="audience-choice audience-choice-personal" data-audience-choice="personal">
+          <span class="audience-choice-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8M5 9v12h14V9M9 21v-8h6v8"/></svg></span>
+          <span class="audience-choice-copy"><strong>個人・ご家庭で利用</strong><small>ご自宅のネット回線をお探しの方</small></span>
+          <svg class="audience-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+    <div data-audience-step="personal" hidden>
+      <button type="button" class="audience-back" data-audience-back><span aria-hidden="true">‹</span> ご利用目的を選び直す</button>
+      <p class="audience-eyebrow">個人・ご家庭でご利用の方へ</p>
+      <h2 id="personal-title">お住まいの地域を<br>お選びください</h2>
+      <div class="audience-campaigns">
+        <button type="button" class="audience-campaign audience-campaign-tokai" data-campaign-route="tokai">
+          <span class="audience-region-main"><span class="audience-region-copy"><span class="audience-region-heading"><strong class="audience-region">東海地域</strong><span class="audience-region-badge">地域限定</span></span><span class="audience-region-description">にお住まいの方</span></span><span class="audience-region-arrow" aria-hidden="true">→</span></span>
+          <span class="audience-campaign-action">キャンペーンを表示する</span>
+        </button>
+        <a class="audience-campaign audience-campaign-national" href="household/" data-campaign-route="nationwide">
+          <span class="audience-region-main"><span class="audience-region-copy"><span class="audience-region-heading"><strong class="audience-region">全国対応</strong></span><span class="audience-region-description"><span>東海地域以外に</span><span>お住まいの方</span></span></span><span class="audience-region-arrow" aria-hidden="true">→</span></span>
+          <span class="audience-campaign-action">キャンペーンを表示する</span>
+        </a>
+      </div>
+      <p id="tokai-route-status" class="audience-route-status" role="status" hidden>キャンペーンを表示できませんでした。時間をおいて再度お試しください。</p>
+      <p class="audience-footnote">※提供可否は、住所・建物により異なります。</p>
+    </div>
+  </dialog>
 </body>
 </html>

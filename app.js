@@ -11,12 +11,16 @@
   const preferences = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'];
   const prefecture = document.querySelector('#prefecture');
   preferences.forEach(name => { const option = document.createElement('option'); option.value = name; option.textContent = name; prefecture.append(option); });
-  const track = (event, properties = {}) => { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event, ...properties }); };
+  const track = (event, properties = {}) => {
+    if (!window.LpAudience?.canTrack()) return;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event, audience_type:'business', ...properties });
+  };
   const status = (message, error = false) => { const node = form.querySelector('.form-status'); node.textContent = message; node.classList.toggle('is-error', error); };
   const updateType = () => {
     const area = form.querySelector('[name=inquiryType]:checked').value === 'area';
     addressFields.hidden = !area; addressFields.disabled = !area;
-    submitLabel.textContent = area ? '提供エリアの確認を依頼する' : 'お問い合わせを送信する';
+    submitLabel.textContent = '送信する';
     status('');
   };
   form.querySelectorAll('[name=inquiryType]').forEach(input => input.addEventListener('change', updateType));
@@ -35,6 +39,11 @@
     target.scrollIntoView({behavior:'smooth', block:'start'});
     window.history.replaceState(null, '', window.location.pathname + window.location.search + fragment);
   }));
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => link.addEventListener('click', event => {
+    if (!window.LpAudience?.isBusiness()) { event.preventDefault(); window.LpAudience?.open(); return; }
+    if (window.LpAudience.isPreview()) { event.preventDefault(); status('プレビューのため、電話は発信されません。'); return; }
+    // Keep the telephone action available without sending an advertising conversion.
+  }));
   let heroPast = false; let phoneCardVisible = false;
   const updateSticky = () => { sticky.hidden = !heroPast || phoneCardVisible; };
   if ('IntersectionObserver' in window) {
@@ -47,10 +56,16 @@
   });
   form.addEventListener('submit', async event => {
     event.preventDefault(); if (form.dataset.submitting === 'true') return;
+    if (!window.LpAudience?.isBusiness()) { window.LpAudience?.open(); return; }
     if (!form.checkValidity()) { form.reportValidity(); status('未入力の項目や入力形式をご確認ください。', true); return; }
+    if (window.LpAudience.isPreview()) { status('プレビューのため、送信されません。入力内容は保存していません。'); return; }
     const payload = Object.fromEntries(new FormData(form).entries());
     Object.assign(payload, attribution?.getPayload() || {});
     payload.formType = payload.inquiryType === 'area' ? 'area' : 'consultation';
+    payload.audience_type = 'business';
+    payload.audience_label = '法人・個人事業主';
+    payload.campaign_route = 'business';
+    payload.ads_conversion_eligible = 'true';
     payload.campaign = '10ギガ ワンコインキャンペーン（12ヶ月実質月額500円・税抜）';
     payload.submittedAt = new Date().toISOString();
     if (payload.formType === 'area') { payload.fullAddress = `${payload.postalCode} ${payload.prefecture}${payload.city}${payload.street}`; payload.areaCheckMethod = '担当者による住所・建物設備確認'; payload.submissionStage = 'contact_complete'; }

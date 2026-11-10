@@ -2,6 +2,21 @@
 
 法人・店舗向け「12ヶ月間 実質月額500円（税抜）」ワンコインキャンペーンの静的LPです。採用KVを主軸に、下段は説明・利用シーン・料金・品質・導入フローをコンテンツとして構成しています。キャンペーンの内訳と適用条件は、初期状態が閉じたアコーディオンに収録しています。
 
+## 2026-11-10 法人・個人の振り分けと家庭向けLP
+
+入口で法人・個人事業主（店舗・オフィス・登記先のご自宅）と、個人・家庭用を選択します。個人は地域を選び、全国版 `/household/` または東海版 `/household/tokai/` へ遷移します。全国は6ヶ月実質月額500円（税抜）、東海は6ヶ月実質月額0円＋3万円キャッシュバックです。個人にWiFi同時申込条件は適用しません。具体的な対象県・未確認の受取条件は補完していません。
+
+- `audience-config.js` は本番設定（`previewMode:false` / `businessMeasurementEnabled:true`）です。GTMは法人を選択した後だけ読み込みます。
+- 法人は送信処理が完了した場合のみ `lead_form_submit` を発火し、電話クリックは広告CVを発火しません。個人ページはGTM・Meta Pixel・Google広告タグを読み込まず、個人フォームもCVイベントを発火しません。
+- 3フォームとも既存の同一Webhookを使用します。`audience_type` は `business` / `personal`、`audience_label` は「法人・個人事業主」/「個人」、`campaign_route` は `business` / `nationwide` / `tokai`、`ads_conversion_eligible` は法人 `true`、個人 `false` です。
+- 個人も氏名・電話・メール・流入UTM等をトップレベルの項目で送り、会社名の追加入力は求めません。重複送信防止・通信失敗表示を実装しています。
+- 家庭用の申込期限は日本時間の当月末を表示します。画像は価格訴求・家族背景に使用し、見出し・日付・条件・CTA・FAQはHTMLです。
+- プレビュー用の検索除外設定は公開ファイルから除去し、個人2ページのcanonicalとsitemapを追加しました。元の未公開プレビューは別フォルダで送信停止設定のまま保持しています。
+
+検証: `node --test attribution.test.cjs audience-router.test.cjs household-form.test.cjs`（36件）。通信はモック化しています。別途2026-11-10にダミーデータで共通WebhookのHTTP 200 / successを確認し、ユーザーが法人と全国個人A/Bの通知受信を確認しました。東海再テストはWebhook受付成功まで確認しています。`no-cors` のためブラウザの完了表示だけで通知メール到達を保証するものではありません。Zapier・Google/Metaアカウント側の外部CV連携設定は変更していません。
+
+以下は従来LPの構成・過去の検証記録です。
+
 - リポジトリ: https://github.com/wizao012/oshigoto-hikari.com
 - 配信ドメイン: https://oshigoto-hikari.com/
 - GitHub Pages配信ファイルはリポジトリのルートに配置します。ビルドは不要です。
