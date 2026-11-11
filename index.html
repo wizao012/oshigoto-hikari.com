@@ -28,7 +28,7 @@
     .kv-deadline-update b{font-family:Arial,sans-serif;font-weight:900}
     .kv-deadline-update span{font-size:.72em}
   </style>
-  <link rel="stylesheet" href="audience-modal.css?v=20261106-2">
+  <link rel="stylesheet" href="audience-modal.css?v=20261111-release1">
 
   <script src="audience-config.js?v=20261110-release1" defer></script>
   <script src="audience-router.js?v=20261110-release1" defer></script>
@@ -261,25 +261,26 @@
 
   <dialog id="audience-dialog" class="audience-dialog" aria-labelledby="audience-title">
     <div class="audience-brand"><img src="media-logo.png" width="1994" height="373" alt="おしごと光10G"></div>
-    <div data-audience-step="purpose">
-      <p class="audience-eyebrow">キャンペーンのご案内</p>
-      <h2 id="audience-title">ご利用の目的を<br>お選びください</h2>
-      <p class="audience-description">ご利用に合わせたキャンペーンをご案内します。</p>
+    <div class="audience-purpose" data-audience-step="purpose">
+      <div class="audience-promo audience-promo-image">
+        <img src="assets/modal-campaign-price-20261111-v1.webp" width="2050" height="767" alt="期間限定キャンペーン実施中。12ヶ月間、実質月額500円（税抜）" loading="eager" fetchpriority="high" decoding="async">
+      </div>
+      <h2 id="audience-title" class="audience-question"><span class="audience-question-lead">お探しのネット回線は</span><span class="audience-question-main"><strong>お仕事用</strong><span>？</span><strong>ご家庭用</strong><span>？</span></span></h2>
       <div class="audience-choices">
         <button type="button" class="audience-choice audience-choice-business" data-audience-choice="business">
-          <span class="audience-choice-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6V4h8v2M4 7h16v13H4zM4 11c5 3 11 3 16 0M10 12v3h4v-3"/></svg></span>
+          <span class="audience-choice-icon"><svg class="audience-choice-art" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="15" y="3" width="11" height="5" rx="1.5" fill="#94c5ff"/><rect x="10" y="7" width="21" height="35" rx="3" fill="#fff" stroke="currentColor" stroke-width="1.7"/><rect x="28" y="23" width="13" height="19" rx="2" fill="#bad9ff" stroke="currentColor" stroke-width="1.7"/><g fill="currentColor"><rect x="15" y="13" width="4" height="5" rx="1"/><rect x="23" y="13" width="4" height="5" rx="1"/><rect x="15" y="23" width="4" height="5" rx="1"/><rect x="23" y="23" width="4" height="5" rx="1"/><rect x="33" y="28" width="4" height="4" rx="1"/></g><rect x="18" y="33" width="7" height="9" rx="1" fill="#d8eaff" stroke="currentColor" stroke-width="1.5"/><path d="M6 43h38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
           <span class="audience-choice-copy"><strong>法人・個人事業主</strong><small><span>店舗・オフィス・</span><span>登記先のご自宅など</span></small></span>
           <svg class="audience-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
         </button>
         <button type="button" class="audience-choice audience-choice-personal" data-audience-choice="personal">
-          <span class="audience-choice-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8M5 9v12h14V9M9 21v-8h6v8"/></svg></span>
+          <span class="audience-choice-icon"><svg class="audience-choice-art" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="32" y="9" width="5" height="12" rx="1" fill="currentColor"/><rect x="10" y="21" width="28" height="21" rx="3" fill="#fffdf6" stroke="currentColor" stroke-width="1.7"/><path d="M5 23 24 6l19 17" fill="#f6d371" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><rect x="15" y="27" width="7" height="7" rx="1" fill="#fff0bc" stroke="currentColor" stroke-width="1.5"/><path d="M18.5 27v7M15 30.5h7" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="27" y="28" width="7" height="14" rx="1.5" fill="#d9eaff" stroke="currentColor" stroke-width="1.5"/><path d="M6 43h36" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
           <span class="audience-choice-copy"><strong>個人・ご家庭で利用</strong><small>ご自宅のネット回線をお探しの方</small></span>
           <svg class="audience-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
         </button>
       </div>
     </div>
     <div data-audience-step="personal" hidden>
-      <button type="button" class="audience-back" data-audience-back><span aria-hidden="true">‹</span> ご利用目的を選び直す</button>
+      <button type="button" class="audience-back" data-audience-back><span aria-hidden="true">‹</span> 前の画面に戻る</button>
       <p class="audience-eyebrow">個人・ご家庭でご利用の方へ</p>
       <h2 id="personal-title">お住まいの地域を<br>お選びください</h2>
       <div class="audience-campaigns">
@@ -293,7 +294,6 @@
         </a>
       </div>
       <p id="tokai-route-status" class="audience-route-status" role="status" hidden>キャンペーンを表示できませんでした。時間をおいて再度お試しください。</p>
-      <p class="audience-footnote">※提供可否は、住所・建物により異なります。</p>
     </div>
   </dialog>
 </body>
