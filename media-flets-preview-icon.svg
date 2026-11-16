@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0072bc"/><path d="M13 19h38M13 32h29M13 45h20" stroke="white" stroke-width="7" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>10ギガ光回線</title>
+  <rect width="64" height="64" rx="14" fill="#1045c9"/>
+  <path d="M4 51 60 7v12L4 63Z" fill="#1688e8"/>
+  <path d="m11 23 8-5h6v30h-8V27l-6 4Z" fill="#fff"/>
+  <rect x="31" y="18" width="23" height="30" rx="10" fill="#fff"/>
+  <rect x="39" y="25" width="7" height="16" rx="3.5" fill="#1045c9"/>
+  <path d="M32 53h21l-6 5H26Z" fill="#70e7ff"/>
+</svg>
