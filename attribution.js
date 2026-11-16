@@ -1,11 +1,11 @@
 (function (root, factory) {
   const api = factory();
   if (typeof module === 'object' && module.exports) module.exports = api;
-  else root.OshigotoAttribution = api;
+  else root.FletsWestAttribution = api;
 })(typeof window !== 'undefined' ? window : globalThis, () => {
   'use strict';
 
-  const STORAGE_KEY = 'oshigoto-hikari:ad-attribution:v1';
+  const STORAGE_KEY = 'ntt-west-flets:ad-attribution:v1';
   const FIELDS = Object.freeze([
     'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
     'keyword', 'campaign_id', 'adgroup_id', 'ad_id', 'adset_id',
